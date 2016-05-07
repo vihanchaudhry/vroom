@@ -1,0 +1,469 @@
+fileFormatVersion: 2
+guid: 41f3d21e93b99a748b883cc99daa6438
+timeCreated: 1462589503
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 3rd Brake LED_001
+    100002: 4102_001
+    100004: 4102_002
+    100006: Audi Grill Badge_001
+    100008: //RootNode
+    100010: bonnet_ok_001
+    100012: boot_ok_001
+    100014: bump_fro01_001
+    100016: bump_rea01_001
+    100018: chassis_001
+    100020: D#1_001
+    100022: D#1_002
+    100024: door_lf_ok_001
+    100026: door_lr_ok_001
+    100028: door_lr_ok_002
+    100030: door_rf_ok_001
+    100032: doorwin01_001
+    100034: doorwin01_002
+    100036: doorwin_001
+    100038: doorwin_002
+    100040: Exhaust_001
+    100042: Exhaust_002
+    100044: Front Seat_001
+    100046: Front Seat_002
+    100048: Front Suspension_001
+    100050: Front Suspension_003
+    100052: Group_001
+    100054: Group_002
+    100056: Group_003
+    100058: Group_004
+    100060: Group_005
+    100062: Group_006
+    100064: Group_007
+    100066: Group_008
+    100068: Gruppo#34_001
+    100070: Gruppo#34_002
+    100072: Gruppo#34_003
+    100074: Gruppo#34_004
+    100076: Gruppo#34_005
+    100078: Gruppo#34_006
+    100080: Gruppo#34_007
+    100082: Gruppo#34_008
+    100084: Headlight Assembly_001
+    100086: Headlight Assembly_002
+    100088: Headlight Cover_001
+    100090: Headlight Cover_002
+    100092: IN_001
+    100094: IN_002
+    100096: inner_rim__001
+    100098: inner_rim__002
+    100100: inner_rim__003
+    100102: inner_rim__004
+    100104: lightglsbo_001
+    100106: Plate 049_001
+    100108: Plate 049_002
+    100110: Plate Holder_001
+    100112: Quarter Window_001
+    100114: Quarter Window_002
+    100116: Rear Headrest_001
+    100118: Rear Headrest_002
+    100120: Rear Suspension_001
+    100122: Rear Suspension_002
+    100124: RS_001
+    100126: RS_002
+    100128: skp704F_001
+    100130: steering_o_001
+    100132: Tail Light Assembly_001
+    100134: Tail Light Assembly_002
+    100136: Tail Light Cover_001
+    100138: Tail Light Cover_002
+    100140: Trunk Light Assembly_001
+    100142: Trunk Light Assembly_002
+    100144: Trunk Lights Cover_001
+    100146: Trunk Lights Cover_002
+    100148: wheel_001
+    100150: wheel_002
+    100152: wheel_003
+    100154: wheel_004
+    100156: Windshield_001
+    100158: Wipers_001
+    400000: 3rd Brake LED_001
+    400002: 4102_001
+    400004: 4102_002
+    400006: Audi Grill Badge_001
+    400008: //RootNode
+    400010: bonnet_ok_001
+    400012: boot_ok_001
+    400014: bump_fro01_001
+    400016: bump_rea01_001
+    400018: chassis_001
+    400020: D#1_001
+    400022: D#1_002
+    400024: door_lf_ok_001
+    400026: door_lr_ok_001
+    400028: door_lr_ok_002
+    400030: door_rf_ok_001
+    400032: doorwin01_001
+    400034: doorwin01_002
+    400036: doorwin_001
+    400038: doorwin_002
+    400040: Exhaust_001
+    400042: Exhaust_002
+    400044: Front Seat_001
+    400046: Front Seat_002
+    400048: Front Suspension_001
+    400050: Front Suspension_003
+    400052: Group_001
+    400054: Group_002
+    400056: Group_003
+    400058: Group_004
+    400060: Group_005
+    400062: Group_006
+    400064: Group_007
+    400066: Group_008
+    400068: Gruppo#34_001
+    400070: Gruppo#34_002
+    400072: Gruppo#34_003
+    400074: Gruppo#34_004
+    400076: Gruppo#34_005
+    400078: Gruppo#34_006
+    400080: Gruppo#34_007
+    400082: Gruppo#34_008
+    400084: Headlight Assembly_001
+    400086: Headlight Assembly_002
+    400088: Headlight Cover_001
+    400090: Headlight Cover_002
+    400092: IN_001
+    400094: IN_002
+    400096: inner_rim__001
+    400098: inner_rim__002
+    400100: inner_rim__003
+    400102: inner_rim__004
+    400104: lightglsbo_001
+    400106: Plate 049_001
+    400108: Plate 049_002
+    400110: Plate Holder_001
+    400112: Quarter Window_001
+    400114: Quarter Window_002
+    400116: Rear Headrest_001
+    400118: Rear Headrest_002
+    400120: Rear Suspension_001
+    400122: Rear Suspension_002
+    400124: RS_001
+    400126: RS_002
+    400128: skp704F_001
+    400130: steering_o_001
+    400132: Tail Light Assembly_001
+    400134: Tail Light Assembly_002
+    400136: Tail Light Cover_001
+    400138: Tail Light Cover_002
+    400140: Trunk Light Assembly_001
+    400142: Trunk Light Assembly_002
+    400144: Trunk Lights Cover_001
+    400146: Trunk Lights Cover_002
+    400148: wheel_001
+    400150: wheel_002
+    400152: wheel_003
+    400154: wheel_004
+    400156: Windshield_001
+    400158: Wipers_001
+    2300000: 3rd Brake LED_001
+    2300002: 4102_001
+    2300004: 4102_002
+    2300006: Audi Grill Badge_001
+    2300008: bonnet_ok_001
+    2300010: boot_ok_001
+    2300012: bump_fro01_001
+    2300014: bump_rea01_001
+    2300016: chassis_001
+    2300018: D#1_001
+    2300020: D#1_002
+    2300022: door_lf_ok_001
+    2300024: door_lr_ok_001
+    2300026: door_lr_ok_002
+    2300028: door_rf_ok_001
+    2300030: doorwin01_001
+    2300032: doorwin01_002
+    2300034: doorwin_001
+    2300036: doorwin_002
+    2300038: Exhaust_001
+    2300040: Exhaust_002
+    2300042: Front Seat_001
+    2300044: Front Seat_002
+    2300046: Front Suspension_001
+    2300048: Front Suspension_003
+    2300050: Group_001
+    2300052: Group_002
+    2300054: Group_003
+    2300056: Group_004
+    2300058: Group_005
+    2300060: Group_006
+    2300062: Group_007
+    2300064: Group_008
+    2300066: Gruppo#34_001
+    2300068: Gruppo#34_002
+    2300070: Gruppo#34_003
+    2300072: Gruppo#34_004
+    2300074: Gruppo#34_005
+    2300076: Gruppo#34_006
+    2300078: Gruppo#34_007
+    2300080: Gruppo#34_008
+    2300082: Headlight Assembly_001
+    2300084: Headlight Assembly_002
+    2300086: Headlight Cover_001
+    2300088: Headlight Cover_002
+    2300090: IN_001
+    2300092: IN_002
+    2300094: inner_rim__001
+    2300096: inner_rim__002
+    2300098: inner_rim__003
+    2300100: inner_rim__004
+    2300102: lightglsbo_001
+    2300104: Plate 049_001
+    2300106: Plate 049_002
+    2300108: Plate Holder_001
+    2300110: Quarter Window_001
+    2300112: Quarter Window_002
+    2300114: Rear Headrest_001
+    2300116: Rear Headrest_002
+    2300118: Rear Suspension_001
+    2300120: Rear Suspension_002
+    2300122: RS_001
+    2300124: RS_002
+    2300126: skp704F_001
+    2300128: steering_o_001
+    2300130: Tail Light Assembly_001
+    2300132: Tail Light Assembly_002
+    2300134: Tail Light Cover_001
+    2300136: Tail Light Cover_002
+    2300138: Trunk Light Assembly_001
+    2300140: Trunk Light Assembly_002
+    2300142: Trunk Lights Cover_001
+    2300144: Trunk Lights Cover_002
+    2300146: wheel_001
+    2300148: wheel_002
+    2300150: wheel_003
+    2300152: wheel_004
+    2300154: Windshield_001
+    2300156: Wipers_001
+    3300000: 3rd Brake LED_001
+    3300002: 4102_001
+    3300004: 4102_002
+    3300006: Audi Grill Badge_001
+    3300008: bonnet_ok_001
+    3300010: boot_ok_001
+    3300012: bump_fro01_001
+    3300014: bump_rea01_001
+    3300016: chassis_001
+    3300018: D#1_001
+    3300020: D#1_002
+    3300022: door_lf_ok_001
+    3300024: door_lr_ok_001
+    3300026: door_lr_ok_002
+    3300028: door_rf_ok_001
+    3300030: doorwin01_001
+    3300032: doorwin01_002
+    3300034: doorwin_001
+    3300036: doorwin_002
+    3300038: Exhaust_001
+    3300040: Exhaust_002
+    3300042: Front Seat_001
+    3300044: Front Seat_002
+    3300046: Front Suspension_001
+    3300048: Front Suspension_003
+    3300050: Group_001
+    3300052: Group_002
+    3300054: Group_003
+    3300056: Group_004
+    3300058: Group_005
+    3300060: Group_006
+    3300062: Group_007
+    3300064: Group_008
+    3300066: Gruppo#34_001
+    3300068: Gruppo#34_002
+    3300070: Gruppo#34_003
+    3300072: Gruppo#34_004
+    3300074: Gruppo#34_005
+    3300076: Gruppo#34_006
+    3300078: Gruppo#34_007
+    3300080: Gruppo#34_008
+    3300082: Headlight Assembly_001
+    3300084: Headlight Assembly_002
+    3300086: Headlight Cover_001
+    3300088: Headlight Cover_002
+    3300090: IN_001
+    3300092: IN_002
+    3300094: inner_rim__001
+    3300096: inner_rim__002
+    3300098: inner_rim__003
+    3300100: inner_rim__004
+    3300102: lightglsbo_001
+    3300104: Plate 049_001
+    3300106: Plate 049_002
+    3300108: Plate Holder_001
+    3300110: Quarter Window_001
+    3300112: Quarter Window_002
+    3300114: Rear Headrest_001
+    3300116: Rear Headrest_002
+    3300118: Rear Suspension_001
+    3300120: Rear Suspension_002
+    3300122: RS_001
+    3300124: RS_002
+    3300126: skp704F_001
+    3300128: steering_o_001
+    3300130: Tail Light Assembly_001
+    3300132: Tail Light Assembly_002
+    3300134: Tail Light Cover_001
+    3300136: Tail Light Cover_002
+    3300138: Trunk Light Assembly_001
+    3300140: Trunk Light Assembly_002
+    3300142: Trunk Lights Cover_001
+    3300144: Trunk Lights Cover_002
+    3300146: wheel_001
+    3300148: wheel_002
+    3300150: wheel_003
+    3300152: wheel_004
+    3300154: Windshield_001
+    3300156: Wipers_001
+    4300000: Gruppo#34_008
+    4300002: Gruppo#34_007
+    4300004: Group_008
+    4300006: Group_007
+    4300008: inner_rim__004
+    4300010: Gruppo#34_006
+    4300012: Gruppo#34_005
+    4300014: Group_006
+    4300016: Group_005
+    4300018: inner_rim__003
+    4300020: Gruppo#34_004
+    4300022: Gruppo#34_003
+    4300024: Group_004
+    4300026: Group_003
+    4300028: inner_rim__002
+    4300030: Gruppo#34_002
+    4300032: Gruppo#34_001
+    4300034: Group_002
+    4300036: Group_001
+    4300038: inner_rim__001
+    4300040: Wipers_001
+    4300042: 4102_002
+    4300044: RS_002
+    4300046: IN_002
+    4300048: D#1_002
+    4300050: Plate 049_002
+    4300052: 4102_001
+    4300054: RS_001
+    4300056: IN_001
+    4300058: D#1_001
+    4300060: Plate 049_001
+    4300062: Plate Holder_001
+    4300064: Trunk Light Assembly_002
+    4300066: Trunk Light Assembly_001
+    4300068: 3rd Brake LED_001
+    4300070: Tail Light Assembly_002
+    4300072: Headlight Assembly_002
+    4300074: Tail Light Assembly_001
+    4300076: Headlight Assembly_001
+    4300078: Windshield_001
+    4300080: Quarter Window_002
+    4300082: Headlight Cover_002
+    4300084: Headlight Cover_001
+    4300086: Tail Light Cover_002
+    4300088: Quarter Window_001
+    4300090: Tail Light Cover_001
+    4300092: doorwin_002
+    4300094: wheel_004
+    4300096: wheel_003
+    4300098: wheel_002
+    4300100: wheel_001
+    4300102: steering_o_001
+    4300104: doorwin01_002
+    4300106: door_lr_ok_002
+    4300108: bonnet_ok_001
+    4300110: door_rf_ok_001
+    4300112: doorwin01_001
+    4300114: doorwin_001
+    4300116: door_lr_ok_001
+    4300118: door_lf_ok_001
+    4300120: boot_ok_001
+    4300122: Trunk Lights Cover_002
+    4300124: Trunk Lights Cover_001
+    4300126: lightglsbo_001
+    4300128: Audi Grill Badge_001
+    4300130: bump_fro01_001
+    4300132: bump_rea01_001
+    4300134: Rear Suspension_002
+    4300136: Rear Suspension_001
+    4300138: Front Suspension_003
+    4300140: Front Suspension_001
+    4300142: Exhaust_002
+    4300144: Exhaust_001
+    4300146: Rear Headrest_002
+    4300148: Rear Headrest_001
+    4300150: Front Seat_002
+    4300152: Front Seat_001
+    4300154: chassis_001
+    4300156: skp704F_001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
