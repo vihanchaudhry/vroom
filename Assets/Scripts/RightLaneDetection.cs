@@ -2,13 +2,13 @@
 
 namespace Assets.Scripts
 {
-    public class LaneDetectionScript : MonoBehaviour {
+    public class RightLaneDetection : MonoBehaviour {
 
         void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("You are in the fast lane.");
+                Debug.Log("You are in the slow lane.");
             }
         }
 
@@ -16,7 +16,7 @@ namespace Assets.Scripts
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("You have left the fast lane.");
+                Debug.Log("You have left the slow lane.");
             }
         }
     }
