@@ -11556,14 +11556,6 @@ Prefab:
       propertyPath: m_Name
       value: Street1Lane30m (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 466364, guid: 0787c4e36de12cc479e92f1f9465bdbd, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 466364, guid: 0787c4e36de12cc479e92f1f9465bdbd, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0787c4e36de12cc479e92f1f9465bdbd, type: 2}
   m_IsPrefabParent: 0
