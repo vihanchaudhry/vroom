@@ -10,6 +10,13 @@ namespace UnityStandardAssets.Vehicles.Car
         FourWheelDrive
     }
 
+	internal enum CarMode
+	{
+		park,
+		reverse,
+		drive
+	}
+
     internal enum SpeedType
     {
         MPH,
@@ -19,6 +26,7 @@ namespace UnityStandardAssets.Vehicles.Car
     public class CarController : MonoBehaviour
     {
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
+		[SerializeField] private CarMode m_CarMode = CarMode.drive;
         [SerializeField] private WheelCollider[] m_WheelColliders = new WheelCollider[4];
         [SerializeField] private GameObject[] m_WheelMeshes = new GameObject[4];
         [SerializeField] private WheelEffects[] m_WheelEffects = new WheelEffects[4];
@@ -57,7 +65,10 @@ namespace UnityStandardAssets.Vehicles.Car
 
         // Use this for initialization
         private void Start()
-        {
+        {	
+			// m_CarMode = CarMode.park;
+			// TEMP
+			m_CarMode = CarMode.drive;
             m_WheelMeshLocalRotations = new Quaternion[4];
             for (int i = 0; i < 4; i++)
             {
@@ -203,7 +214,13 @@ namespace UnityStandardAssets.Vehicles.Car
                     thrustTorque = accel * (m_CurrentTorque / 4f);
                     for (int i = 0; i < 4; i++)
                     {
-                        m_WheelColliders[i].motorTorque = thrustTorque;
+					Debug.Log(m_CarMode);
+						if (m_CarMode == CarMode.drive) {
+							m_WheelColliders[i].motorTorque = thrustTorque;
+						} else if (m_CarMode == CarMode.reverse) {
+							m_WheelColliders[i].motorTorque = -1 * thrustTorque;
+						}
+
                     }
                     break;
 
