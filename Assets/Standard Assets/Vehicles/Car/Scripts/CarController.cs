@@ -143,8 +143,8 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             if (shifter == 1)
             {
-                // If the player has practically stopped, let them change modes
-                if (!isShifting && CurrentSpeed < 1)
+                // If the player has practically stopped and let them change modes and if the user is stepping on the brake
+                if (!isShifting && CurrentSpeed < 1 && footbrake < 0)
                 {
                     if (m_CarMode == CarMode.drive)
                     {
@@ -152,10 +152,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     }
                     else if (m_CarMode == CarMode.park)
                     {
-                        if (footbrake < 0) // If the user is stepping on the brake, then let them out of park
-                        {
-                            m_CarMode = CarMode.reverse;
-                        }
+                        m_CarMode = CarMode.reverse;
                     }
                     else if (m_CarMode == CarMode.reverse)
                     {
