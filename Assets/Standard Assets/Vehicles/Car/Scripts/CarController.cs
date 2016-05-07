@@ -214,7 +214,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     thrustTorque = accel * (m_CurrentTorque / 4f);
                     for (int i = 0; i < 4; i++)
                     {
-					Debug.Log(m_CarMode);
+					//Debug.Log(m_CarMode);
 						if (m_CarMode == CarMode.drive) {
 							m_WheelColliders[i].motorTorque = thrustTorque;
 						} else if (m_CarMode == CarMode.reverse) {
