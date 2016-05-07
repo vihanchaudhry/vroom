@@ -8,6 +8,15 @@ namespace Assets.Scripts
         {
             if (other.CompareTag("Player"))
             {
+                PlayerProperties pp = other.GetComponent<PlayerProperties>();
+                if (pp.isMerging())
+                {
+                    if (!pp.getBlinkerLeft())
+                    {
+                        Debug.Log("You didn't have your right blinker on!");
+                    }
+                }
+                pp.setMerging(false);
                 Debug.Log("You are in the fast lane.");
             }
         }
@@ -16,8 +25,10 @@ namespace Assets.Scripts
         {
             if (other.CompareTag("Player"))
             {
+                other.GetComponent<PlayerProperties>().setMerging(true);
                 Debug.Log("You have left the fast lane.");
             }
+            
         }
     }
 }
