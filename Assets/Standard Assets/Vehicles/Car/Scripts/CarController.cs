@@ -54,6 +54,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private float m_CurrentTorque;
         private Rigidbody m_Rigidbody;
         private const float k_ReversingThreshold = 0.01f;
+        private bool isShifting;
 
         public bool Skidding { get; private set; }
         public float BrakeInput { get; private set; }
@@ -69,6 +70,7 @@ namespace UnityStandardAssets.Vehicles.Car
 			// m_CarMode = CarMode.park;
 			// TEMP
 			m_CarMode = CarMode.drive;
+            isShifting = false;
             m_WheelMeshLocalRotations = new Quaternion[4];
             for (int i = 0; i < 4; i++)
             {
@@ -137,8 +139,39 @@ namespace UnityStandardAssets.Vehicles.Car
         }
 
 
-        public void Move(float steering, float accel, float footbrake, float handbrake)
+        public void Move(float steering, float accel, float footbrake, float handbrake, float shifter)
         {
+            if (shifter == 1)
+            {
+                // If the player has practically stopped, let them change modes
+                if (!isShifting && CurrentSpeed < 1)
+                {
+                    if (m_CarMode == CarMode.drive)
+                    {
+                        m_CarMode = CarMode.park;
+                    }
+                    else if (m_CarMode == CarMode.park)
+                    {
+                        if (footbrake < 0) // If the user is stepping on the brake, then let them out of park
+                        {
+                            m_CarMode = CarMode.reverse;
+                        }
+                    }
+                    else if (m_CarMode == CarMode.reverse)
+                    {
+                        m_CarMode = CarMode.drive;
+                    }
+                    isShifting = true;
+                }
+            }
+            else
+            {
+                if (isShifting)
+                {
+                    isShifting = false;
+                }
+            }
+
             for (int i = 0; i < 4; i++)
             {
                 Quaternion quat;
