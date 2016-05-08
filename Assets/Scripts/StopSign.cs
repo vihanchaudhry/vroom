@@ -61,6 +61,8 @@ namespace Assets.Scripts
                 _enabled = true;
             }
             other.GetComponentInParent<PlayerProperties>().stopRayCasting();
+            Destroy(leftPS);
+            Destroy(rightPS);
             Destroy(gameObject);
 
         }
