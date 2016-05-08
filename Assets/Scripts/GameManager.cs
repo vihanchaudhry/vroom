@@ -47,6 +47,16 @@ public class GameManager : MonoBehaviour
     {
         gameoverGUI = GameObject.FindGameObjectWithTag("Gameover");
         isGameOver = false;
+        currentDemerits = 0;
+    }
+
+    public void addDemerit(int amount)
+    {
+        currentDemerits += amount;
+        if (currentDemerits >= 15)
+        {
+            GameOverMenu();
+        }
     }
 
     public void GameOverMenu()
@@ -68,5 +78,6 @@ public class GameManager : MonoBehaviour
     public void OnLevelWasLoaded()
     {
         gameoverGUI = GameObject.FindGameObjectWithTag("Gameover");
+        currentDemerits = 0;
     }
 }
