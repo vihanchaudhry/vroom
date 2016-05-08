@@ -10,17 +10,34 @@ public class PlayerProperties : MonoBehaviour
     private bool merging = false;
     private float timer; //time until reset
     private CarState cs;
+    private RaycastHit hit;
+    private Ray ray;
+    private bool rayCasting = false;
+    public LayerMask lm;
 
     // Use this for initialization
     void Start()
     {
         cs = GetComponentInChildren<CarState>();
         TestLeft = TestRight = false;
+        rayCasting = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(rayCasting)
+        {
+            Camera cam = GetComponentInChildren<Camera>();
+            ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+
+            if (Physics.Raycast(ray, out hit, 100, lm))
+            {
+
+                hit.transform.gameObject.GetComponent<stopSignLights>().set();
+                // Do something with the object that was hit by the raycast.
+            }
+        }
         if (TestLeft)
         {
             setBlinkerLeft(true);
@@ -97,5 +114,15 @@ public class PlayerProperties : MonoBehaviour
     public void shift(int f)
     {
         cs.shift(f);
+    }
+
+    public void startRayCasting()
+    {
+        rayCasting = true;
+    }
+
+    public void stopRayCasting()
+    {
+        rayCasting = false;
     }
 }
