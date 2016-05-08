@@ -86,7 +86,6 @@ namespace Assets.Scripts.car
 				
 			if (pp.getBlinkerRight() && _currentPlayerAngles != 0) {
 				float difference = Mathf.Abs(180 - Mathf.Abs(Mathf.Abs(_currentPlayerAngles + 90 - transform.eulerAngles.y) - 180));
-				Debug.Log(difference);
 				if (difference < 10) {
 					pp.setBlinkerRight(false);
 					_currentPlayerAngles = 0;
