@@ -25,6 +25,10 @@ namespace UnityStandardAssets.Vehicles.Car
 #if !MOBILE_INPUT
             float handbrake = CrossPlatformInputManager.GetAxis("Jump");
             float shifter = CrossPlatformInputManager.GetAxis("Pay Respects");
+
+			float leftBlinker = CrossPlatformInputManager.GetAxis("Left Bumper");
+			float rightBlinker = CrossPlatformInputManager.GetAxis("Right Bumper");
+
             m_Car.Move(h, v, v, handbrake, shifter);
 #else
             m_Car.Move(h, v, v, 0f);
