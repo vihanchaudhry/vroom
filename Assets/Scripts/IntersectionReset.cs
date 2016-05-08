@@ -5,6 +5,7 @@ public class IntersectionReset : MonoBehaviour {
 
     private float first, second;
     private bool setOnce = false;
+    private bool setTwice = false;
     private float blinker = 0;
 
 	// Use this for initialization
@@ -33,11 +34,15 @@ public class IntersectionReset : MonoBehaviour {
             setOnce = true;
             return 1;
         }
-        else
+        else if(!setTwice)
         {
             second = f;
-            setOnce = false;
+            setTwice = true;
             return 2;
+        }
+        else
+        {
+            return 0;
         }
     }
 
@@ -50,15 +55,25 @@ public class IntersectionReset : MonoBehaviour {
         if(f == 1 || f == -3) {
             if (blinker != 2)
             {
-                //fail
+                Debug.Log("4");
+                GameManager.Instance.AddDemerit(1);
             }
         }
         else if(f == -1 || f == 3)
         {
             if(blinker != 1)
             {
-                //fail
+                Debug.Log("5");
+                GameManager.Instance.AddDemerit(1);
             }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            setOnce = setTwice = false;
         }
     }
 

@@ -217,7 +217,6 @@ namespace Assets.Scripts.car
                 ApplyDrive(accel, footbrake);
                 CapSpeed();
 
-                Debug.Log(CurrentSpeed);
                 if (CurrentSpeed > 60)
                 {
                     // Critical Error

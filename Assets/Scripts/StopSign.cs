@@ -7,6 +7,7 @@ namespace Assets.Scripts
 
         private bool _enabled = true;
         private bool _part2 = false;
+        //private bool temp = false;
         public ParticleSystem left, right;
         private ParticleSystem leftPS, rightPS;
         private Vector3 offset1, offset2;
@@ -49,20 +50,33 @@ namespace Assets.Scripts
 
         void OnTriggerExit(Collider other)
         {
-            if (_enabled)
+            if (other.CompareTag("Player"))
             {
-                if(!_part2)
-                    GameManager.Instance.AddDemerit(1);
-
-                GameManager.Instance.AddDemerit(1);
+                if (!other.GetComponentInParent<PlayerProperties>().getImm())
+                {
+                    if (_enabled)
+                    {
+                        if (!_part2)
+                        {
+                            GameManager.Instance.AddDemerit(1);
+                            Debug.Log("1");
+                        }
+                        Debug.Log("2");
+                        GameManager.Instance.AddDemerit(1);
+                        _part2 = true;
+                        // temp = true;
+                    }
+                    else
+                    {
+                        // temp = false;
+                        _enabled = true;
+                    }
+                    other.GetComponentInParent<PlayerProperties>().stopRayCasting();
+                    Destroy(leftPS);
+                    Destroy(rightPS);
+                    Destroy(gameObject);
+                }
             }
-            else
-            {
-                _enabled = true;
-            }
-            other.GetComponentInParent<PlayerProperties>().stopRayCasting();
-            Destroy(gameObject);
-
         }
     }
 }

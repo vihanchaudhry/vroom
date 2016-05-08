@@ -6,7 +6,7 @@ public class PlayerProperties : MonoBehaviour
 
     private bool blinkerLeft, blinkerRight;
     public Blinking BlinkLeft, BlinkRight;
-    public bool TestLeft, TestRight;
+    public bool TestLeft, TestRight, immunity;
     private bool merging = false;
     private float timer; //time until reset
     private CarState cs;
@@ -21,6 +21,7 @@ public class PlayerProperties : MonoBehaviour
         cs = GetComponentInChildren<CarState>();
         TestLeft = TestRight = false;
         rayCasting = true;
+        immunity = false;
     }
 
     // Update is called once per frame
@@ -133,5 +134,15 @@ public class PlayerProperties : MonoBehaviour
         else if (blinkerRight)
             return 2;
         return 0;
+    }
+
+    public void setImmunity(bool b)
+    {
+        immunity = b;
+    }
+
+    public bool getImm()
+    {
+        return immunity;
     }
 }

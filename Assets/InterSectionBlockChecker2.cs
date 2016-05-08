@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
-public class PedestrianCheck : MonoBehaviour {
+public class InterSectionBlockChecker2 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +18,9 @@ public class PedestrianCheck : MonoBehaviour {
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("3");
-            GameManager.Instance.AddDemerit(1);
-            Destroy(gameObject);
+            transform.parent.GetComponentInChildren<InterSectionBlockChecker>().reset();
+            GetComponentInParent<IntersectionBlock>().setCheck(true);
+
         }
     }
 }
