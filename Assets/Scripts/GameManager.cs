@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.car;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 
@@ -9,11 +10,13 @@ public class GameManager : MonoBehaviour
     private CarController player;
     public GameObject gameoverGUI;
     public GameObject winnerGUI;
+    public Text scoreGUI;
     public bool isGameOver;
     public AudioClip crashSound;
     public AudioClip wrongSound;
     public AudioClip correctSound;
     public AudioClip seatbeltSound;
+    public AudioClip applauseSound;
 
     public enum Errors
     {
@@ -56,7 +59,6 @@ public class GameManager : MonoBehaviour
     //Variables
     private static GameManager instance = null;
     public static int currentDemerits;
-    public static int maxDemerits;
 
 
     public bool hasSentFeedback = false;
@@ -69,6 +71,8 @@ public class GameManager : MonoBehaviour
         isGameOver = false;
         currentDemerits = 0;
         player = FindObjectOfType<CarController>();
+        scoreGUI = GameObject.FindGameObjectWithTag("Demerits").GetComponent<Text>();
+        scoreGUI.text = currentDemerits.ToString();
     }
 
 
@@ -85,12 +89,14 @@ public class GameManager : MonoBehaviour
 
     public void AddDemerit(int amount)
     {
+        GUI.enabled = true;
         currentDemerits += amount;
         AudioSource.PlayClipAtPoint(wrongSound, player.transform.position);
         if (currentDemerits >= 15)
         {
             GameOverMenu(GameManager.Errors.MaxDemerits);
         }
+        scoreGUI.text = currentDemerits.ToString();
     }
 
     public void GameOverMenu(Errors error)
@@ -142,7 +148,7 @@ public class GameManager : MonoBehaviour
 
         GUI.enabled = true;
         isGameOver = true;
-        //AudioSource.PlayClipAtPoint(crashSound, player.transform.position);
+        AudioSource.PlayClipAtPoint(applauseSound, player.transform.position);
 
         foreach (Transform t in winnerGUI.transform)
         {
@@ -168,7 +174,7 @@ public class GameManager : MonoBehaviour
         currentDemerits = 0;
         isGameOver = false;
         player = FindObjectOfType<CarController>();
-
+        scoreGUI = GameObject.FindGameObjectWithTag("Demerits").GetComponent<Text>();
     }
 
 }
