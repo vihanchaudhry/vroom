@@ -62,6 +62,17 @@ public class GameManager : MonoBehaviour
         currentDemerits = 0;
     }
 
+    public void Update()
+    {
+        if (isGameOver)
+        {
+            if (Input.GetButtonDown("Pay Respects"))
+            {
+                RestartGame();
+            }
+        }
+    }
+
     public void addDemerit(int amount)
     {
         currentDemerits += amount;
@@ -85,19 +96,19 @@ public class GameManager : MonoBehaviour
 
         if (error == Errors.HitCurb)
         {
-            errorMessage.text = "You hit the curb! Looks like you need to take another trip to the DMV.";
+            errorMessage.text = "You hit the curb! Looks like you need to take another trip to the DMV. Press X to restart";
         }
         else if (error == Errors.HitPedestrian)
         {
-            errorMessage.text = "You have to stop when the pedestrians crossing! He is going to sue you for all you're worth.";
+            errorMessage.text = "You have to stop when the pedestrians crossing! He is going to sue you for all you're worth. Press X to restart";
         }
         else if (error == Errors.RanRed)
         {
-            errorMessage.text = "You ran a red light! This is illegal you know.";
+            errorMessage.text = "You ran a red light! This is illegal you know. Press X to restart";
         }
         else
         {
-            errorMessage.text = "You got over 15 demerits! Looks like you need to take another trip to the DMV.";
+            errorMessage.text = "You got over 15 demerits! Looks like you need to take another trip to the DMV. Press X to restart";
         }
     }
 
