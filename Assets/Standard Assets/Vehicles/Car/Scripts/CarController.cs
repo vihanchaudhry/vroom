@@ -143,8 +143,8 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             if (shifter == 1)
             {
-                // If the player has practically stopped, let them change modes
-                if (!isShifting && CurrentSpeed < 1)
+                // If the player has practically stopped and let them change modes and if the user is stepping on the brake
+                if (!isShifting && CurrentSpeed < 1 && footbrake < 0)
                 {
                     if (m_CarMode == CarMode.drive)
                     {
@@ -152,10 +152,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     }
                     else if (m_CarMode == CarMode.park)
                     {
-                        if (footbrake < 0) // If the user is stepping on the brake, then let them out of park
-                        {
-                            m_CarMode = CarMode.reverse;
-                        }
+                        m_CarMode = CarMode.reverse;
                     }
                     else if (m_CarMode == CarMode.reverse)
                     {
@@ -243,29 +240,33 @@ namespace UnityStandardAssets.Vehicles.Car
             float thrustTorque;
             switch (m_CarDriveType)
             {
-                case CarDriveType.FourWheelDrive:
-                    thrustTorque = accel * (m_CurrentTorque / 4f);
-                    for (int i = 0; i < 4; i++)
-                    {
-					//Debug.Log(m_CarMode);
-						if (m_CarMode == CarMode.drive) {
-							m_WheelColliders[i].motorTorque = thrustTorque;
-						} else if (m_CarMode == CarMode.reverse) {
-							m_WheelColliders[i].motorTorque = -1 * thrustTorque;
-						}
+			case CarDriveType.FourWheelDrive:
+				thrustTorque = accel * (m_CurrentTorque / 4f);
+				// Make car move even if not gassed
+				if (thrustTorque == 0) {
+					thrustTorque = 50;
+				}
+                for (int i = 0; i < 4; i++)
+                {
+					
+					if (m_CarMode == CarMode.drive) {
+						m_WheelColliders[i].motorTorque = thrustTorque;
+					} else if (m_CarMode == CarMode.reverse) {
+						m_WheelColliders[i].motorTorque = -1 * thrustTorque;
+					}
 
-                    }
-                    break;
+                }
+                break;
 
-                case CarDriveType.FrontWheelDrive:
-                    thrustTorque = accel * (m_CurrentTorque / 2f);
-                    m_WheelColliders[0].motorTorque = m_WheelColliders[1].motorTorque = thrustTorque;
-                    break;
+            case CarDriveType.FrontWheelDrive:
+                thrustTorque = accel * (m_CurrentTorque / 2f);
+                m_WheelColliders[0].motorTorque = m_WheelColliders[1].motorTorque = thrustTorque;
+                break;
 
-                case CarDriveType.RearWheelDrive:
-                    thrustTorque = accel * (m_CurrentTorque / 2f);
-                    m_WheelColliders[2].motorTorque = m_WheelColliders[3].motorTorque = thrustTorque;
-                    break;
+            case CarDriveType.RearWheelDrive:
+                thrustTorque = accel * (m_CurrentTorque / 2f);
+                m_WheelColliders[2].motorTorque = m_WheelColliders[3].motorTorque = thrustTorque;
+                break;
 
             }
 
