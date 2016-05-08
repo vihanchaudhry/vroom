@@ -17,6 +17,7 @@ public class Blinking : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 	    if(run)
         {
             timer += Time.unscaledDeltaTime;
@@ -33,6 +34,7 @@ public class Blinking : MonoBehaviour {
                 runTimer = runTime;
                 timer = 0;
                 sp.enabled = false;
+                
             }
         }
 	}

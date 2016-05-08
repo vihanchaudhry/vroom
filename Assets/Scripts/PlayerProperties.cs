@@ -26,7 +26,7 @@ public class PlayerProperties : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rayCasting)
+        if (rayCasting)
         {
             Camera cam = GetComponentInChildren<Camera>();
             ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
