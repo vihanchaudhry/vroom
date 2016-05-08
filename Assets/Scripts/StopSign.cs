@@ -54,13 +54,16 @@ public class StopSign : MonoBehaviour
                 GameManager.Instance.addDemerit(1);
 
             GameManager.Instance.addDemerit(1);
+            Destroy(leftPS);
+            Destroy(rightPS);
+            Destroy(gameObject);
+
         }
         else
         {
             enabled = true;
         }
         other.GetComponentInParent<PlayerProperties>().stopRayCasting();
-        Destroy(gameObject);
 
     }
 }
