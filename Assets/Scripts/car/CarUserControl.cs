@@ -1,23 +1,22 @@
-using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-namespace UnityStandardAssets.Vehicles.Car
+namespace Assets.Scripts.car
 {
     [RequireComponent(typeof (CarController))]
     public class CarUserControl : MonoBehaviour
     {
         private CarController m_Car; // the car controller we want to use
-		private bool isLeftBlinkering;
-		private bool isRightBlinkering;
+		private bool _isLeftBlinkering;
+		private bool _isRightBlinkering;
 
         private void Awake()
         {
             // get the car controller
             m_Car = GetComponent<CarController>();
 
-			isLeftBlinkering = false;
-			isRightBlinkering = false;
+			_isLeftBlinkering = false;
+			_isRightBlinkering = false;
         }
 
 
@@ -36,36 +35,36 @@ namespace UnityStandardAssets.Vehicles.Car
 			// Handle Blinker logic
 			PlayerProperties pp = GetComponent<PlayerProperties>();
 			if (leftBlinker == 1) {
-				if (!isLeftBlinkering) {
+				if (!_isLeftBlinkering) {
 					if (pp.getBlinkerLeft()) {
 						pp.setBlinkerLeft(false);
 					} else {
 						pp.setBlinkerLeft(true);
 					}
-					isLeftBlinkering = true;
+					_isLeftBlinkering = true;
 				}
 			}
 			else
 			{
-				if (isLeftBlinkering) {
-					isLeftBlinkering = false;
+				if (_isLeftBlinkering) {
+					_isLeftBlinkering = false;
 				}
 			}
 
 			if (rightBlinker == 1) {
-				if (!isRightBlinkering) {
+				if (!_isRightBlinkering) {
 					if (pp.getBlinkerRight()) {
 						pp.setBlinkerRight(false);
 					} else {
 						pp.setBlinkerRight(true);
 					}
-					isRightBlinkering = true;
+					_isRightBlinkering = true;
 				}
 			}
 			else
 			{
-				if (isRightBlinkering) {
-					isRightBlinkering = false;
+				if (_isRightBlinkering) {
+					_isRightBlinkering = false;
 				}
 			}
 

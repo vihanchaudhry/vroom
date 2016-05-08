@@ -59,7 +59,7 @@ public class PlayerProperties : MonoBehaviour
         {
             blinkerRight = false;
             BlinkRight.setRun(false);
-            StartCoroutine(runTimerL(BlinkLeft.runTime));
+            // StartCoroutine(runTimerL(BlinkLeft.runTime));
         }
         BlinkLeft.setRun(b);
 
@@ -72,7 +72,7 @@ public class PlayerProperties : MonoBehaviour
         {
             blinkerLeft = false;
             BlinkLeft.setRun(false);
-            StartCoroutine(runTimerR(BlinkRight.runTime));
+            // StartCoroutine(runTimerR(BlinkRight.runTime));
         }
         BlinkRight.setRun(b);
 

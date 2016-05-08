@@ -50,7 +50,10 @@ public class StopSign : MonoBehaviour
     {
         if (enabled)
         {
-            //fail
+            if(!part2)
+                GameManager.Instance.addDemerit(1);
+
+            GameManager.Instance.addDemerit(1);
         }
         else
         {
