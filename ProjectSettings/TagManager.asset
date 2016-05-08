@@ -8,6 +8,8 @@ TagManager:
   - Gameover
   - ErrorMessage
   - Winner
+  - Demerit
+  - Demerits
   layers:
   - Default
   - TransparentFX

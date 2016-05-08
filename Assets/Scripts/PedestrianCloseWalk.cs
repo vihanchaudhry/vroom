@@ -5,7 +5,6 @@ namespace Assets.Scripts
     public class PedestrianCloseWalk : Assets.Scripts.PedestrianWalk {
 
         private bool can = true;
-        private ParticleSystem ps;
         public GameObject coll;
 
         // Use this for initialization
@@ -36,7 +35,7 @@ namespace Assets.Scripts
             }
         }
 
-        public void TurnOn(PlayerProperties p)
+        public new void TurnOn(PlayerProperties p)
         {
             ps = Instantiate(indicator, transform.parent.transform.position + indicator.transform.position, indicator.transform.rotation) as ParticleSystem;
             run = true;
