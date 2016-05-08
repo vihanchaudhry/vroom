@@ -40,6 +40,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameoverGUI: {fileID: 146998, guid: 79ef2a603ec64d443bcf8ce677d5de9f, type: 2}
+  isGameOver: 0
+  crashSound: {fileID: 8300000, guid: df19c27f5c6c63d44b90e98b9a8706cd, type: 3}
+  wrongSound: {fileID: 8300000, guid: e201b2f9feff1f441988a3cee5a2cee8, type: 3}
+  correctSound: {fileID: 8300000, guid: 58d4df47fb4653142827ac8e6e7c7e39, type: 3}
+  currentError: 0
   hasSentFeedback: 0
 --- !u!1001 &100100000
 Prefab:

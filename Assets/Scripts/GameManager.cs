@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.car;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
+    private CarController player;
     public GameObject gameoverGUI;
     public bool isGameOver;
+    public AudioClip crashSound;
+    public AudioClip wrongSound;
+    public AudioClip correctSound;
 
     public enum Errors
     {
@@ -60,6 +64,7 @@ public class GameManager : MonoBehaviour
         gameoverGUI = GameObject.FindGameObjectWithTag("Gameover");
         isGameOver = false;
         currentDemerits = 0;
+        player = FindObjectOfType<CarController>();
     }
 
     public void Update()
@@ -76,6 +81,7 @@ public class GameManager : MonoBehaviour
     public void addDemerit(int amount)
     {
         currentDemerits += amount;
+        AudioSource.PlayClipAtPoint(wrongSound, player.transform.position);
         if (currentDemerits >= 15)
         {
             GameOverMenu(GameManager.Errors.MaxDemerits);
@@ -86,6 +92,7 @@ public class GameManager : MonoBehaviour
     {
         GUI.enabled = true;
         isGameOver = true;
+        AudioSource.PlayClipAtPoint(crashSound, player.transform.position);
          
         foreach (Transform t in gameoverGUI.transform)
         {
@@ -112,6 +119,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PlayCorrectSound()
+    {
+        AudioSource.PlayClipAtPoint(correctSound, player.transform.position);
+    }
 
 
     public void RestartGame()
@@ -123,5 +134,6 @@ public class GameManager : MonoBehaviour
     {
         gameoverGUI = GameObject.FindGameObjectWithTag("Gameover");
         currentDemerits = 0;
+        isGameOver = false;
     }
 }
