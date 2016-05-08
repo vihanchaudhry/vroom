@@ -10,6 +10,7 @@ namespace Assets.Scripts.car
 		private bool _isLeftBlinkering;
 		private bool _isRightBlinkering;
 		private float _currentPlayerAngles;
+		private bool _isSeatbeltOn;
 
         private void Awake()
         {
@@ -20,6 +21,7 @@ namespace Assets.Scripts.car
 			_isLeftBlinkering = false;
 			_isRightBlinkering = false;
 			_currentPlayerAngles = 0;
+			_isSeatbeltOn = false;
         }
 
 
@@ -34,6 +36,8 @@ namespace Assets.Scripts.car
 
 			float leftBlinker = CrossPlatformInputManager.GetAxis("Left Bumper");
 			float rightBlinker = CrossPlatformInputManager.GetAxis("Right Bumper");
+
+			float seatbelt = CrossPlatformInputManager.GetAxis("Seatbelt");
 
 			// Handle Blinker logic
 			PlayerProperties pp = GetComponent<PlayerProperties>();
@@ -90,6 +94,12 @@ namespace Assets.Scripts.car
 					pp.setBlinkerRight(false);
 					_currentPlayerAngles = 0;
 				}
+			}
+
+			// Seatbelt logic
+			if (seatbelt == 1 && !_isSeatbeltOn) {
+				GameManager.Instance.ClickSeatBelt();
+				_isSeatbeltOn = true;
 			}
 
             m_Car.Move(h, v, v, handbrake, shifter);
