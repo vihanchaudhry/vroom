@@ -9,10 +9,12 @@ public class PlayerProperties : MonoBehaviour
     public bool TestLeft, TestRight;
     private bool merging = false;
     private float timer; //time until reset
+    private CarState cs;
 
     // Use this for initialization
     void Start()
     {
+        cs = GetComponent<CarState>();
         TestLeft = TestRight = false;
     }
 
@@ -89,5 +91,11 @@ public class PlayerProperties : MonoBehaviour
     public bool isMerging()
     {
         return merging;
+    }
+
+    //1,2, or 3
+    public void shift(int f)
+    {
+        cs.shift(f);
     }
 }
