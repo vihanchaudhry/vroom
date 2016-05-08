@@ -9,14 +9,17 @@ namespace Assets.Scripts.car
         private CarController m_Car; // the car controller we want to use
 		private bool _isLeftBlinkering;
 		private bool _isRightBlinkering;
+		private float _currentPlayerAngles;
 
         private void Awake()
         {
             // get the car controller
             m_Car = GetComponent<CarController>();
 
+
 			_isLeftBlinkering = false;
 			_isRightBlinkering = false;
+			_currentPlayerAngles = 0;
         }
 
 
@@ -38,7 +41,9 @@ namespace Assets.Scripts.car
 				if (!_isLeftBlinkering) {
 					if (pp.getBlinkerLeft()) {
 						pp.setBlinkerLeft(false);
+						_currentPlayerAngles = 0;
 					} else {
+						_currentPlayerAngles = transform.eulerAngles.y;
 						pp.setBlinkerLeft(true);
 					}
 					_isLeftBlinkering = true;
@@ -55,7 +60,9 @@ namespace Assets.Scripts.car
 				if (!_isRightBlinkering) {
 					if (pp.getBlinkerRight()) {
 						pp.setBlinkerRight(false);
+						_currentPlayerAngles = 0;
 					} else {
+						_currentPlayerAngles = transform.eulerAngles.y;
 						pp.setBlinkerRight(true);
 					}
 					_isRightBlinkering = true;
@@ -65,6 +72,24 @@ namespace Assets.Scripts.car
 			{
 				if (_isRightBlinkering) {
 					_isRightBlinkering = false;
+				}
+			}
+
+			// Turn off blinker if player has finished turning
+			if (pp.getBlinkerLeft() && _currentPlayerAngles != 0) {
+				float difference = Mathf.Abs(180 - Mathf.Abs(Mathf.Abs(_currentPlayerAngles - 90 - transform.eulerAngles.y) - 180));
+				if (difference < 10) {
+					pp.setBlinkerLeft(false);
+					_currentPlayerAngles = 0;
+				}
+			} 
+				
+			if (pp.getBlinkerRight() && _currentPlayerAngles != 0) {
+				float difference = Mathf.Abs(180 - Mathf.Abs(Mathf.Abs(_currentPlayerAngles + 90 - transform.eulerAngles.y) - 180));
+				Debug.Log(difference);
+				if (difference < 10) {
+					pp.setBlinkerRight(false);
+					_currentPlayerAngles = 0;
 				}
 			}
 
