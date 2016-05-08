@@ -711,6 +711,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11436268, guid: fc212c3e6212df64293fd74e3886a694, type: 2}
+      propertyPath: m_Text
+      value: 'Critical Error! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443588, guid: fc212c3e6212df64293fd74e3886a694, type: 2}
+      propertyPath: m_Text
+      value: Looks like you need to take another trip to the DMV.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc212c3e6212df64293fd74e3886a694, type: 2}
   m_IsPrefabParent: 0
@@ -2519,6 +2527,48 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 123366, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
   m_PrefabInternal: {fileID: 50015445}
+--- !u!1001 &827531990
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 437576, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 105.67367
+      objectReference: {fileID: 0}
+    - target: {fileID: 437576, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.12745476
+      objectReference: {fileID: 0}
+    - target: {fileID: 437576, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 334.46017
+      objectReference: {fileID: 0}
+    - target: {fileID: 437576, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 437576, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 437576, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 437576, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 437576, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &846078025
 Prefab:
   m_ObjectHideFlags: 0
@@ -5146,7 +5196,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400044, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5179,6 +5229,22 @@ Prefab:
     - target: {fileID: 400042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
       propertyPath: m_LocalPosition.z
       value: -1.592
+      objectReference: {fileID: 0}
+    - target: {fileID: 451296, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 489512, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 452978, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 2000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
