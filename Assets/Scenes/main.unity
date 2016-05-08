@@ -2326,6 +2326,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 185852, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_Name
+      value: Pedestrian
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
   m_IsPrefabParent: 0
@@ -4340,6 +4344,10 @@ Prefab:
     - target: {fileID: 426856, guid: acb3cdfe210a82d4985ff563ef985db9, type: 2}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100926, guid: acb3cdfe210a82d4985ff563ef985db9, type: 2}
+      propertyPath: m_Name
+      value: PedestrianClose
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acb3cdfe210a82d4985ff563ef985db9, type: 2}
