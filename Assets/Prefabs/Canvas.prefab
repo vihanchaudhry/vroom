@@ -177,7 +177,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Critical error! '
+  m_Text: 'Critical Error! '
 --- !u!114 &11443588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,7 +210,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Looks like you need to head to take another trip to the DMV.
+  m_Text: Looks like you need to take another trip to the DMV.
 --- !u!114 &11445124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,7 +243,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Try again
+  m_Text: Try Again
 --- !u!114 &11446864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -469,7 +469,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.4, y: -10.5}
+  m_AnchoredPosition: {x: 23, y: -10.5}
   m_SizeDelta: {x: 206, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22498716
