@@ -1824,7 +1824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &140894
 GameObject:
   m_ObjectHideFlags: 1
@@ -11495,6 +11495,7 @@ MonoBehaviour:
   BlinkRight: {fileID: 11415698}
   TestLeft: 0
   TestRight: 0
+  immunity: 0
   lm:
     serializedVersion: 2
     m_Bits: 256
@@ -13701,14 +13702,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199308}
   m_LocalRotation: {x: 0, y: 0.77200586, z: 0, w: 0.63561547}
-  m_LocalPosition: {x: 0, y: 0, z: 33}
+  m_LocalPosition: {x: 0, y: 0, z: 105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22460682}
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -75}
+  m_AnchoredPosition: {x: -1, y: -96}
   m_SizeDelta: {x: 195, y: 92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22414224

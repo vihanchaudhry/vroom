@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Author: NeAraz
 // This is in fact just the Water script from Pro Standard Assets,
 // just with refraction stuff removed.
 
