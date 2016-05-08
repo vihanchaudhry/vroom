@@ -29,8 +29,8 @@ public class IntersectionComponent : MonoBehaviour
             }
             else
             {
-                dad.setBlinker(other.GetComponent<PlayerProperties>().getBlinker())
-                    }
+                dad.setBlinker(other.GetComponent<PlayerProperties>().getBlinker());
+            }
         }
     }
 }
