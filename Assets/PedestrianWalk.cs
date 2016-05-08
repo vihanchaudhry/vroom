@@ -30,7 +30,7 @@ public class PedestrianWalk : MonoBehaviour {
                 Destroy(transform.parent.gameObject, 1.5f);
                 this.enabled = false;
             }
-            else if(t > 0.78)
+            else if(t > 0.78 && t < 0.9)
             {
                 if(pp.GetComponent<Rigidbody>().velocity != Vector3.zero)
                 {
