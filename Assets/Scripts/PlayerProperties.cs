@@ -43,7 +43,7 @@ public class PlayerProperties : MonoBehaviour
             setBlinkerLeft(true);
             TestLeft = false;
         }
-        if(TestRight)
+        if (TestRight)
         {
             setBlinkerRight(true);
             TestRight = false;
@@ -124,5 +124,14 @@ public class PlayerProperties : MonoBehaviour
     public void stopRayCasting()
     {
         rayCasting = false;
+    }
+
+    public float getBlinker()
+    {
+        if (blinkerLeft)
+            return 1;
+        else if (blinkerRight)
+            return 2;
+        return 0;
     }
 }

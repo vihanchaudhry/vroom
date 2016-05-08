@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,9 +9,20 @@ public class GameManager : MonoBehaviour
     public GameObject gameoverGUI;
     public bool isGameOver;
 
+    public enum Errors
+    {
+        RanRed,
+        HitCurb,
+        HitPedestrian,
+        MaxDemerits
+    };
+
+    public Errors currentError;
+
     //Get Components
     public static GameManager Instance
     {
+
         get
         {
             if (instance == null)
@@ -55,20 +67,41 @@ public class GameManager : MonoBehaviour
         currentDemerits += amount;
         if (currentDemerits >= 15)
         {
-            GameOverMenu();
+            GameOverMenu(GameManager.Errors.MaxDemerits);
         }
     }
 
-    public void GameOverMenu()
+    public void GameOverMenu(Errors error)
     {
         GUI.enabled = true;
         isGameOver = true;
-
+         
         foreach (Transform t in gameoverGUI.transform)
         {
             t.gameObject.SetActive(true);
         }
+
+        Text errorMessage = GameObject.FindGameObjectWithTag("ErrorMessage").GetComponent<Text>();
+
+        if (error == Errors.HitCurb)
+        {
+            errorMessage.text = "You hit the curb! Looks like you need to take another trip to the DMV.";
+        }
+        else if (error == Errors.HitPedestrian)
+        {
+            errorMessage.text = "You have to stop when the pedestrians crossing! He is going to sue you for all you're worth.";
+        }
+        else if (error == Errors.RanRed)
+        {
+            errorMessage.text = "You ran a red light! This is illegal you know.";
+        }
+        else
+        {
+            errorMessage.text = "You got over 15 demerits! Looks like you need to take another trip to the DMV.";
+        }
     }
+
+
 
     public void RestartGame()
     {
