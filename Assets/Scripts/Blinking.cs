@@ -13,7 +13,7 @@ public class Blinking : MonoBehaviour {
         runTimer = runTime;
         timer = 0;
         sp = GetComponent<SpriteRenderer>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {

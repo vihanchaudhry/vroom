@@ -14,7 +14,7 @@ public class PlayerProperties : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        cs = GetComponent<CarState>();
+        cs = GetComponentInChildren<CarState>();
         TestLeft = TestRight = false;
     }
 
