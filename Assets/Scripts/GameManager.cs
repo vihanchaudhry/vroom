@@ -142,9 +142,9 @@ public class GameManager : MonoBehaviour
 
         GUI.enabled = true;
         isGameOver = true;
-        AudioSource.PlayClipAtPoint(crashSound, player.transform.position);
+        //AudioSource.PlayClipAtPoint(crashSound, player.transform.position);
 
-        foreach (Transform t in gameoverGUI.transform)
+        foreach (Transform t in winnerGUI.transform)
         {
             t.gameObject.SetActive(true);
         }
