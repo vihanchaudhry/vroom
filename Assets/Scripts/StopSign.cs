@@ -11,6 +11,8 @@ namespace Assets.Scripts
         public ParticleSystem left, right;
         private ParticleSystem leftPS, rightPS;
         private Vector3 offset1, offset2;
+        public bool temp = false;
+        public Transform a, b;
         // Use this for initialization
         void Start()
         {
@@ -40,9 +42,22 @@ namespace Assets.Scripts
             {
                 if (other.GetComponent<Rigidbody>().velocity == Vector3.zero && !_part2 && _enabled)
                 {
+                    
                     _part2 = true;
-                    leftPS = Instantiate(left, transform.position + offset1, left.transform.rotation) as ParticleSystem;
-                    rightPS = Instantiate(right, transform.position + offset2, right.transform.rotation) as ParticleSystem;
+                    if (!temp)
+                    {
+                        leftPS =
+                            Instantiate(left, transform.position + offset1, left.transform.rotation) as ParticleSystem;
+                        rightPS =
+                            Instantiate(right, transform.position + offset2, right.transform.rotation) as ParticleSystem;
+                    }
+                    else
+                    {
+                        leftPS =
+                            Instantiate(left, a.position, left.transform.rotation) as ParticleSystem;
+                        rightPS =
+                            Instantiate(right, b.position, right.transform.rotation) as ParticleSystem;
+                    }
                     other.GetComponent<PlayerProperties>().startRayCasting();
                 }
             }
