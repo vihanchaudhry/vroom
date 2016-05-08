@@ -35,7 +35,7 @@ namespace Assets.Scripts
             }
         }
 
-        public void TurnOn(PlayerProperties p)
+        public new void TurnOn(PlayerProperties p)
         {
             ps = Instantiate(indicator, transform.parent.transform.position + indicator.transform.position, indicator.transform.rotation) as ParticleSystem;
             run = true;
