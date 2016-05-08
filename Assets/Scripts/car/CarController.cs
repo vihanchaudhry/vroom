@@ -215,10 +215,11 @@ namespace Assets.Scripts.car
             ApplyDrive(accel, footbrake);
             CapSpeed();
 
-			if (CurrentSpeed > 50) {
+			Debug.Log (CurrentSpeed);
+			if (CurrentSpeed > 60) {
 				// Critical Error
 				GameManager.Instance.GameOverMenu (GameManager.Errors.TooFast);
-			} else if (CurrentSpeed > 35) {
+			} else if (CurrentSpeed > 50) {
 				// Warning: Too Fast
 			}
 
