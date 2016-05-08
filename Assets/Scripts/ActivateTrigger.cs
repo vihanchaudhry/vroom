@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.car;
 
 public class ActivateTrigger : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class ActivateTrigger : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	    triggerObject.SetActive(true);
+	void OnTriggerEnter (Collider other)
+	{
+	    CarUserControl car = other.GetComponent<CarUserControl>();
+        if (car)
+	        triggerObject.SetActive(true);
 	}
 }

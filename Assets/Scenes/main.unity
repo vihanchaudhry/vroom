@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 279b9a6b3e33f8b4b990d36ec7613100, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1291,7 +1291,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
 --- !u!1001 &401061300
 Prefab:
   m_ObjectHideFlags: 0
@@ -2278,6 +2278,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2006544310}
   m_RootOrder: 6
+--- !u!1 &658527307 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 105256, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
+  m_PrefabInternal: {fileID: 1995881394}
 --- !u!1 &698902259 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 175880, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
@@ -2331,7 +2335,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 437576, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 443270, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3069,7 +3073,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463272, guid: 2866fcb7f2403a846884185a2b414cb6, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19857468, guid: 2866fcb7f2403a846884185a2b414cb6, type: 2}
       propertyPath: InitialModule.startColor.maxColor.rgba
@@ -3082,6 +3086,10 @@ Prefab:
     - target: {fileID: 19857468, guid: 2866fcb7f2403a846884185a2b414cb6, type: 2}
       propertyPath: InitialModule.startLifetime.scalar
       value: 4.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 156572, guid: 2866fcb7f2403a846884185a2b414cb6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2866fcb7f2403a846884185a2b414cb6, type: 2}
@@ -3384,6 +3392,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11437738, guid: e59e20c5852a40549a4ca05780d1ea17, type: 2}
+      propertyPath: winnerGUI
+      value: 
+      objectReference: {fileID: 658527307}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e59e20c5852a40549a4ca05780d1ea17, type: 2}
   m_IsPrefabParent: 0
