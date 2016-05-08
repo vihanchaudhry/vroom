@@ -88,9 +88,7 @@ public class CarController : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        // m_CarMode = CarMode.park;
-        // TEMP
-        m_CarMode = CarMode.drive;
+        m_CarMode = CarMode.park;
         isShifting = false;
         m_WheelMeshLocalRotations = new Quaternion[4];
         for (int i = 0; i < 4; i++)
@@ -170,17 +168,17 @@ public class CarController : MonoBehaviour
                 PlayerProperties pp = GetComponent<PlayerProperties>();
                 if (m_CarMode == CarMode.drive)
                 {
-                    pp.shift(3);
+                    pp.shift(1);
                     m_CarMode = CarMode.park;
                 }
                 else if (m_CarMode == CarMode.park)
                 {
-                    pp.shift(1);
+                    pp.shift(2);
                     m_CarMode = CarMode.reverse;
                 }
                 else if (m_CarMode == CarMode.reverse)
                 {
-                    pp.shift(2);
+                    pp.shift(3);
                     m_CarMode = CarMode.drive;
                 }
                 isShifting = true;
