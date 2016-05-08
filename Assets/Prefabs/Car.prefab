@@ -2502,7 +2502,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100042}
-  m_LocalRotation: {x: 0, y: 0.70792216, z: 0, w: 0.7062905}
+  m_LocalRotation: {x: 0, y: 0.70173174, z: 0, w: 0.71244127}
   m_LocalPosition: {x: 44.803196, y: -0.0000019073486, z: 332.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8210,7 +8210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459cec5b068041e44a60a6e3b6abb0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carController: {fileID: 11400002}
+  CarController: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8222,7 +8222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459cec5b068041e44a60a6e3b6abb0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carController: {fileID: 11400002}
+  CarController: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8246,7 +8246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffafd711dc1dbc478a49705cfe1ce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car: {fileID: 11400002}
+  Car: {fileID: 0}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8439,7 +8439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DisablePixelLights: 1
   m_TextureSize: 1024
-  m_ClipPlaneOffset: 0.4
+  m_ClipPlaneOffset: 0.35
   m_ReflectLayers:
     serializedVersion: 2
     m_Bits: 4294967295
