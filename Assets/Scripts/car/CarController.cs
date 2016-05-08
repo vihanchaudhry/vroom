@@ -28,7 +28,7 @@ public class CarController : MonoBehaviour
     [SerializeField]
     private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
     [SerializeField]
-    private CarMode m_CarMode = CarMode.drive;
+    private CarMode m_CarMode;
     [SerializeField]
     private WheelCollider[] m_WheelColliders = new WheelCollider[4];
     [SerializeField]
@@ -182,7 +182,7 @@ public class CarController : MonoBehaviour
                     m_CarMode = CarMode.drive;
                 }
                 isShifting = true;
-            }
+			}
         }
         else
         {
@@ -263,24 +263,21 @@ public class CarController : MonoBehaviour
         float thrustTorque;
         switch (m_CarDriveType)
         {
-            case CarDriveType.FourWheelDrive:
-                thrustTorque = accel * (m_CurrentTorque / 4f);
+		case CarDriveType.FourWheelDrive:
+			thrustTorque = accel * (m_CurrentTorque / 4f);
                 // Make car move even if not gassed
-                if (thrustTorque == 0)
-                {
-                    thrustTorque = 50;
-                }
+			if (thrustTorque == 0) {
+				thrustTorque = 50;
+			}
                 for (int i = 0; i < 4; i++)
                 {
-
-                    if (m_CarMode == CarMode.drive)
-                    {
-                        m_WheelColliders[i].motorTorque = thrustTorque;
-                    }
-                    else if (m_CarMode == CarMode.reverse)
-                    {
-                        m_WheelColliders[i].motorTorque = -1 * thrustTorque;
-                    }
+					if (m_CarMode == CarMode.drive) {
+						m_WheelColliders [i].motorTorque = thrustTorque;
+					} else if (m_CarMode == CarMode.reverse) {
+						m_WheelColliders [i].motorTorque = -1 * thrustTorque;
+					} else {
+						m_WheelColliders [i].motorTorque = 0;
+					}
 
                 }
                 break;

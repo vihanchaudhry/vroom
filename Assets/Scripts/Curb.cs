@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Curb : MonoBehaviour {
 
-    void OnCollisionEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Dude! You just hit the curb, wtf?");
         }
