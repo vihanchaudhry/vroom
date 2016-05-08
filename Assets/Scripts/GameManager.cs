@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public AudioClip crashSound;
     public AudioClip wrongSound;
     public AudioClip correctSound;
+    public AudioClip seatbeltSound;
 
     public enum Errors
     {
@@ -124,6 +125,11 @@ public class GameManager : MonoBehaviour
         AudioSource.PlayClipAtPoint(correctSound, player.transform.position);
     }
 
+    public void ClickSeatBelt()
+    {
+        AudioSource.PlayClipAtPoint(seatbeltSound, player.transform.position);
+    }
+
 
     public void RestartGame()
     {
@@ -135,5 +141,6 @@ public class GameManager : MonoBehaviour
         gameoverGUI = GameObject.FindGameObjectWithTag("Gameover");
         currentDemerits = 0;
         isGameOver = false;
+        player = FindObjectOfType<CarController>();
     }
 }
