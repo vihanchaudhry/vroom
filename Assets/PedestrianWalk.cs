@@ -35,7 +35,7 @@ public class PedestrianWalk : MonoBehaviour {
                 if(pp.GetComponent<Rigidbody>().velocity != Vector3.zero)
                 {
                     //fail
-                    GameManager.Instance.GameOverMenu();
+                    GameManager.Instance.GameOverMenu(GameManager.Errors.HitPedestrian);
                 }
             }
             else if(t > 0.56)

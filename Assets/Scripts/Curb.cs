@@ -7,7 +7,7 @@ public class Curb : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.GameOverMenu();
+            GameManager.Instance.GameOverMenu(GameManager.Errors.HitCurb);
         }
     }
 }
