@@ -215,6 +215,13 @@ namespace Assets.Scripts.car
             ApplyDrive(accel, footbrake);
             CapSpeed();
 
+			if (CurrentSpeed > 50) {
+				// Critical Error
+				GameManager.Instance.GameOverMenu (GameManager.Errors.TooFast);
+			} else if (CurrentSpeed > 35) {
+				// Warning: Too Fast
+			}
+
             //Set the handbrake.
             //Assuming that wheels 2 and 3 are the rear wheels.
             if (handbrake > 0f)
