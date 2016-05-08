@@ -240,29 +240,33 @@ namespace UnityStandardAssets.Vehicles.Car
             float thrustTorque;
             switch (m_CarDriveType)
             {
-                case CarDriveType.FourWheelDrive:
-                    thrustTorque = accel * (m_CurrentTorque / 4f);
-                    for (int i = 0; i < 4; i++)
-                    {
-					//Debug.Log(m_CarMode);
-						if (m_CarMode == CarMode.drive) {
-							m_WheelColliders[i].motorTorque = thrustTorque;
-						} else if (m_CarMode == CarMode.reverse) {
-							m_WheelColliders[i].motorTorque = -1 * thrustTorque;
-						}
+			case CarDriveType.FourWheelDrive:
+				thrustTorque = accel * (m_CurrentTorque / 4f);
+				// Make car move even if not gassed
+				if (thrustTorque == 0) {
+					thrustTorque = 50;
+				}
+                for (int i = 0; i < 4; i++)
+                {
+					
+					if (m_CarMode == CarMode.drive) {
+						m_WheelColliders[i].motorTorque = thrustTorque;
+					} else if (m_CarMode == CarMode.reverse) {
+						m_WheelColliders[i].motorTorque = -1 * thrustTorque;
+					}
 
-                    }
-                    break;
+                }
+                break;
 
-                case CarDriveType.FrontWheelDrive:
-                    thrustTorque = accel * (m_CurrentTorque / 2f);
-                    m_WheelColliders[0].motorTorque = m_WheelColliders[1].motorTorque = thrustTorque;
-                    break;
+            case CarDriveType.FrontWheelDrive:
+                thrustTorque = accel * (m_CurrentTorque / 2f);
+                m_WheelColliders[0].motorTorque = m_WheelColliders[1].motorTorque = thrustTorque;
+                break;
 
-                case CarDriveType.RearWheelDrive:
-                    thrustTorque = accel * (m_CurrentTorque / 2f);
-                    m_WheelColliders[2].motorTorque = m_WheelColliders[3].motorTorque = thrustTorque;
-                    break;
+            case CarDriveType.RearWheelDrive:
+                thrustTorque = accel * (m_CurrentTorque / 2f);
+                m_WheelColliders[2].motorTorque = m_WheelColliders[3].motorTorque = thrustTorque;
+                break;
 
             }
 
