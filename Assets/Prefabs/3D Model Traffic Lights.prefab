@@ -2997,13 +2997,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cbf94368c169c4ea907e9058748694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greenTime: 5
-  yellowTime: 1
-  redTime: 3
-  greenLight: {fileID: 112148}
-  yellowLight: {fileID: 123366}
-  redLight: {fileID: 175880}
-  currentLight: 0
+  GreenTime: 0
+  YellowTime: 0
+  RedTime: 0
+  GreenLight: {fileID: 112148}
+  YellowLight: {fileID: 123366}
+  RedLight: {fileID: 175880}
+  CurrentLight: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

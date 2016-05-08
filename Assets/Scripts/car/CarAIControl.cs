@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace UnityStandardAssets.Vehicles.Car
+namespace Assets.Scripts.car
 {
     [RequireComponent(typeof (CarController))]
-    public class CarAIControl : MonoBehaviour
+    public class CarAiControl : MonoBehaviour
     {
         public enum BrakeCondition
         {
@@ -33,48 +32,48 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] [Range(0, 1)] private float m_AccelWanderAmount = 0.1f;                  // how much the cars acceleration will wander
         [SerializeField] private float m_AccelWanderSpeed = 0.1f;                                 // how fast the cars acceleration wandering will fluctuate
         [SerializeField] private BrakeCondition m_BrakeCondition = BrakeCondition.TargetDistance; // what should the AI consider when accelerating/braking?
-        [SerializeField] private bool m_Driving;                                                  // whether the AI is currently actively driving or stopped.
-        [SerializeField] private Transform m_Target;                                              // 'target' the target object to aim for.
-        [SerializeField] private bool m_StopWhenTargetReached;                                    // should we stop driving when we reach the target?
+        [SerializeField] private bool _mDriving;                                                  // whether the AI is currently actively driving or stopped.
+        [SerializeField] private Transform _mTarget;                                              // 'target' the target object to aim for.
+        [SerializeField] private bool _mStopWhenTargetReached;                                    // should we stop driving when we reach the target?
         [SerializeField] private float m_ReachTargetThreshold = 2;                                // proximity to target to consider we 'reached' it, and stop driving.
 
-        private float m_RandomPerlin;             // A random value for the car to base its wander on (so that AI cars don't all wander in the same pattern)
-        private CarController m_CarController;    // Reference to actual car controller we are controlling
-        private float m_AvoidOtherCarTime;        // time until which to avoid the car we recently collided with
-        private float m_AvoidOtherCarSlowdown;    // how much to slow down due to colliding with another car, whilst avoiding
-        private float m_AvoidPathOffset;          // direction (-1 or 1) in which to offset path to avoid other car, whilst avoiding
-        private Rigidbody m_Rigidbody;
+        private float _mRandomPerlin;             // A random value for the car to base its wander on (so that AI cars don't all wander in the same pattern)
+        private CarController _mCarController;    // Reference to actual car controller we are controlling
+        private float _mAvoidOtherCarTime;        // time until which to avoid the car we recently collided with
+        private float _mAvoidOtherCarSlowdown;    // how much to slow down due to colliding with another car, whilst avoiding
+        private float _mAvoidPathOffset;          // direction (-1 or 1) in which to offset path to avoid other car, whilst avoiding
+        private Rigidbody _mRigidbody;
 
 
         private void Awake()
         {
             // get the car controller reference
-            m_CarController = GetComponent<CarController>();
+            _mCarController = GetComponent<CarController>();
 
             // give the random perlin a random value
-            m_RandomPerlin = Random.value*100;
+            _mRandomPerlin = Random.value*100;
 
-            m_Rigidbody = GetComponent<Rigidbody>();
+            _mRigidbody = GetComponent<Rigidbody>();
         }
 
 
         private void FixedUpdate()
         {
-            if (m_Target == null || !m_Driving)
+            if (_mTarget == null || !_mDriving)
             {
                 // Car should not be moving,
                 // use handbrake to stop
-                m_CarController.Move(0, 0, -1f, 1f, 0);
+                _mCarController.Move(0, 0, -1f, 1f, 0);
             }
             else
             {
                 Vector3 fwd = transform.forward;
-                if (m_Rigidbody.velocity.magnitude > m_CarController.MaxSpeed*0.1f)
+                if (_mRigidbody.velocity.magnitude > _mCarController.MaxSpeed*0.1f)
                 {
-                    fwd = m_Rigidbody.velocity;
+                    fwd = _mRigidbody.velocity;
                 }
 
-                float desiredSpeed = m_CarController.MaxSpeed;
+                float desiredSpeed = _mCarController.MaxSpeed;
 
                 // now it's time to decide if we should be slowing down...
                 switch (m_BrakeCondition)
@@ -84,16 +83,16 @@ namespace UnityStandardAssets.Vehicles.Car
                             // the car will brake according to the upcoming change in direction of the target. Useful for route-based AI, slowing for corners.
 
                             // check out the angle of our target compared to the current direction of the car
-                            float approachingCornerAngle = Vector3.Angle(m_Target.forward, fwd);
+                            float approachingCornerAngle = Vector3.Angle(_mTarget.forward, fwd);
 
                             // also consider the current amount we're turning, multiplied up and then compared in the same way as an upcoming corner angle
-                            float spinningAngle = m_Rigidbody.angularVelocity.magnitude*m_CautiousAngularVelocityFactor;
+                            float spinningAngle = _mRigidbody.angularVelocity.magnitude*m_CautiousAngularVelocityFactor;
 
                             // if it's different to our current angle, we need to be cautious (i.e. slow down) a certain amount
                             float cautiousnessRequired = Mathf.InverseLerp(0, m_CautiousMaxAngle,
                                                                            Mathf.Max(spinningAngle,
                                                                                      approachingCornerAngle));
-                            desiredSpeed = Mathf.Lerp(m_CarController.MaxSpeed, m_CarController.MaxSpeed*m_CautiousSpeedFactor,
+                            desiredSpeed = Mathf.Lerp(_mCarController.MaxSpeed, _mCarController.MaxSpeed*m_CautiousSpeedFactor,
                                                       cautiousnessRequired);
                             break;
                         }
@@ -104,16 +103,16 @@ namespace UnityStandardAssets.Vehicles.Car
                             // head for a stationary target and come to rest when it arrives there.
 
                             // check out the distance to target
-                            Vector3 delta = m_Target.position - transform.position;
+                            Vector3 delta = _mTarget.position - transform.position;
                             float distanceCautiousFactor = Mathf.InverseLerp(m_CautiousMaxDistance, 0, delta.magnitude);
 
                             // also consider the current amount we're turning, multiplied up and then compared in the same way as an upcoming corner angle
-                            float spinningAngle = m_Rigidbody.angularVelocity.magnitude*m_CautiousAngularVelocityFactor;
+                            float spinningAngle = _mRigidbody.angularVelocity.magnitude*m_CautiousAngularVelocityFactor;
 
                             // if it's different to our current angle, we need to be cautious (i.e. slow down) a certain amount
                             float cautiousnessRequired = Mathf.Max(
                                 Mathf.InverseLerp(0, m_CautiousMaxAngle, spinningAngle), distanceCautiousFactor);
-                            desiredSpeed = Mathf.Lerp(m_CarController.MaxSpeed, m_CarController.MaxSpeed*m_CautiousSpeedFactor,
+                            desiredSpeed = Mathf.Lerp(_mCarController.MaxSpeed, _mCarController.MaxSpeed*m_CautiousSpeedFactor,
                                                       cautiousnessRequired);
                             break;
                         }
@@ -125,38 +124,38 @@ namespace UnityStandardAssets.Vehicles.Car
                 // Evasive action due to collision with other cars:
 
                 // our target position starts off as the 'real' target position
-                Vector3 offsetTargetPos = m_Target.position;
+                Vector3 offsetTargetPos = _mTarget.position;
 
                 // if are we currently taking evasive action to prevent being stuck against another car:
-                if (Time.time < m_AvoidOtherCarTime)
+                if (Time.time < _mAvoidOtherCarTime)
                 {
                     // slow down if necessary (if we were behind the other car when collision occured)
-                    desiredSpeed *= m_AvoidOtherCarSlowdown;
+                    desiredSpeed *= _mAvoidOtherCarSlowdown;
 
                     // and veer towards the side of our path-to-target that is away from the other car
-                    offsetTargetPos += m_Target.right*m_AvoidPathOffset;
+                    offsetTargetPos += _mTarget.right*_mAvoidPathOffset;
                 }
                 else
                 {
                     // no need for evasive action, we can just wander across the path-to-target in a random way,
                     // which can help prevent AI from seeming too uniform and robotic in their driving
-                    offsetTargetPos += m_Target.right*
-                                       (Mathf.PerlinNoise(Time.time*m_LateralWanderSpeed, m_RandomPerlin)*2 - 1)*
+                    offsetTargetPos += _mTarget.right*
+                                       (Mathf.PerlinNoise(Time.time*m_LateralWanderSpeed, _mRandomPerlin)*2 - 1)*
                                        m_LateralWanderDistance;
                 }
 
                 // use different sensitivity depending on whether accelerating or braking:
-                float accelBrakeSensitivity = (desiredSpeed < m_CarController.CurrentSpeed)
+                float accelBrakeSensitivity = (desiredSpeed < _mCarController.CurrentSpeed)
                                                   ? m_BrakeSensitivity
                                                   : m_AccelSensitivity;
 
                 // decide the actual amount of accel/brake input to achieve desired speed.
-                float accel = Mathf.Clamp((desiredSpeed - m_CarController.CurrentSpeed)*accelBrakeSensitivity, -1, 1);
+                float accel = Mathf.Clamp((desiredSpeed - _mCarController.CurrentSpeed)*accelBrakeSensitivity, -1, 1);
 
                 // add acceleration 'wander', which also prevents AI from seeming too uniform and robotic in their driving
                 // i.e. increasing the accel wander amount can introduce jostling and bumps between AI cars in a race
                 accel *= (1 - m_AccelWanderAmount) +
-                         (Mathf.PerlinNoise(Time.time*m_AccelWanderSpeed, m_RandomPerlin)*m_AccelWanderAmount);
+                         (Mathf.PerlinNoise(Time.time*m_AccelWanderSpeed, _mRandomPerlin)*m_AccelWanderAmount);
 
                 // calculate the local-relative position of the target, to steer towards
                 Vector3 localTarget = transform.InverseTransformPoint(offsetTargetPos);
@@ -165,15 +164,15 @@ namespace UnityStandardAssets.Vehicles.Car
                 float targetAngle = Mathf.Atan2(localTarget.x, localTarget.z)*Mathf.Rad2Deg;
 
                 // get the amount of steering needed to aim the car towards the target
-                float steer = Mathf.Clamp(targetAngle*m_SteerSensitivity, -1, 1)*Mathf.Sign(m_CarController.CurrentSpeed);
+                float steer = Mathf.Clamp(targetAngle*m_SteerSensitivity, -1, 1)*Mathf.Sign(_mCarController.CurrentSpeed);
 
                 // feed input to the car controller.
-                m_CarController.Move(steer, accel, accel, 0f, 0);
+                _mCarController.Move(steer, accel, accel, 0f, 0);
 
                 // if appropriate, stop driving when we're close enough to the target.
-                if (m_StopWhenTargetReached && localTarget.magnitude < m_ReachTargetThreshold)
+                if (_mStopWhenTargetReached && localTarget.magnitude < m_ReachTargetThreshold)
                 {
-                    m_Driving = false;
+                    _mDriving = false;
                 }
             }
         }
@@ -184,29 +183,29 @@ namespace UnityStandardAssets.Vehicles.Car
             // detect collision against other cars, so that we can take evasive action
             if (col.rigidbody != null)
             {
-                var otherAI = col.rigidbody.GetComponent<CarAIControl>();
+                var otherAI = col.rigidbody.GetComponent<CarAiControl>();
                 if (otherAI != null)
                 {
                     // we'll take evasive action for 1 second
-                    m_AvoidOtherCarTime = Time.time + 1;
+                    _mAvoidOtherCarTime = Time.time + 1;
 
                     // but who's in front?...
                     if (Vector3.Angle(transform.forward, otherAI.transform.position - transform.position) < 90)
                     {
                         // the other ai is in front, so it is only good manners that we ought to brake...
-                        m_AvoidOtherCarSlowdown = 0.5f;
+                        _mAvoidOtherCarSlowdown = 0.5f;
                     }
                     else
                     {
                         // we're in front! ain't slowing down for anybody...
-                        m_AvoidOtherCarSlowdown = 1;
+                        _mAvoidOtherCarSlowdown = 1;
                     }
 
                     // both cars should take evasive action by driving along an offset from the path centre,
                     // away from the other car
                     var otherCarLocalDelta = transform.InverseTransformPoint(otherAI.transform.position);
                     float otherCarAngle = Mathf.Atan2(otherCarLocalDelta.x, otherCarLocalDelta.z);
-                    m_AvoidPathOffset = m_LateralWanderDistance*-Mathf.Sign(otherCarAngle);
+                    _mAvoidPathOffset = m_LateralWanderDistance*-Mathf.Sign(otherCarAngle);
                 }
             }
         }
@@ -214,8 +213,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void SetTarget(Transform target)
         {
-            m_Target = target;
-            m_Driving = true;
+            _mTarget = target;
+            _mDriving = true;
         }
     }
 }
