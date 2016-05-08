@@ -1,2 +1,2 @@
 # vroom
-Davis Hacks VR Project
+Hack Davis VR Project
