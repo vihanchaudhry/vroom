@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     private CarController player;
     public GameObject gameoverGUI;
+    public GameObject winnerGUI;
     public bool isGameOver;
     public AudioClip crashSound;
     public AudioClip wrongSound;
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameoverGUI = GameObject.FindGameObjectWithTag("Gameover");
+        winnerGUI = GameObject.FindGameObjectWithTag("Winner");
         isGameOver = false;
         currentDemerits = 0;
         player = FindObjectOfType<CarController>();
@@ -118,6 +120,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void WinnerMenu()
+    {
+        winnerGUI = GameObject.FindGameObjectWithTag("Winner");
+
+        GUI.enabled = true;
+        isGameOver = true;
+        AudioSource.PlayClipAtPoint(crashSound, player.transform.position);
+
+        foreach (Transform t in gameoverGUI.transform)
+        {
+            t.gameObject.SetActive(true);
+        }
+    }
+
     public void PlayCorrectSound()
     {
         AudioSource.PlayClipAtPoint(correctSound, player.transform.position);
@@ -137,6 +153,7 @@ public class GameManager : MonoBehaviour
     public void OnLevelWasLoaded()
     {
         gameoverGUI = GameObject.FindGameObjectWithTag("Gameover");
+        winnerGUI = GameObject.FindGameObjectWithTag("Winner");
         currentDemerits = 0;
         isGameOver = false;
         player = FindObjectOfType<CarController>();
