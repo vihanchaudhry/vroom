@@ -1928,7 +1928,7 @@ GameObject:
   - 33: {fileID: 3338178}
   - 65: {fileID: 6566614}
   - 23: {fileID: 2383700}
-  - 114: {fileID: 11446396}
+  - 114: {fileID: 11426120}
   m_Layer: 4
   m_Name: MiddleMirror
   m_TagString: Untagged
@@ -3788,7 +3788,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183310}
-  m_LocalRotation: {x: 0.04486591, y: -0.775809, z: 0.013896015, w: -0.62921727}
+  m_LocalRotation: {x: -0.058398653, y: 0.7749078, z: -0.02487567, w: 0.62887883}
   m_LocalPosition: {x: -0.0874, y: 1.343, z: 0.1369}
   m_LocalScale: {x: 0, y: 0.058, z: 0.21}
   m_Children:
@@ -6351,7 +6351,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 25c8daa7a5167134e970579e97465a84, type: 2}
+  - {fileID: 2100000, guid: 9eecd0456cef0d040953041e58ad27f8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -8484,6 +8484,23 @@ MonoBehaviour:
   m_ReflectLayers:
     serializedVersion: 2
     m_Bits: 4294967279
+--- !u!114 &11426120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006b7e25a02f5864196d6b9e7976552d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DisablePixelLights: 1
+  m_TextureSize: 1024
+  m_ClipPlaneOffset: 1
+  m_ReflectLayers:
+    serializedVersion: 2
+    m_Bits: 4294967279
 --- !u!114 &11438872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8535,23 +8552,6 @@ MonoBehaviour:
   m_ReflectLayers:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &11446396
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 006b7e25a02f5864196d6b9e7976552d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_DisablePixelLights: 1
-  m_TextureSize: 1024
-  m_ClipPlaneOffset: 0.54
-  m_ReflectLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &11447898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8584,6 +8584,9 @@ MonoBehaviour:
   BlinkRight: {fileID: 11415698}
   TestLeft: 0
   TestRight: 0
+  lm:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &11463548
 MonoBehaviour:
   m_ObjectHideFlags: 1
