@@ -18,7 +18,6 @@ namespace Assets.Scripts
         void Update () {
             if(run)
             {
-                Debug.Log(t);
                 transform.position = Vector3.Lerp(startPos, destPos, t);
                 if (t > 1)
                 {
