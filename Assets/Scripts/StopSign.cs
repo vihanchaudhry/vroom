@@ -59,9 +59,8 @@ public class StopSign : MonoBehaviour
         {
             enabled = true;
         }
-        Debug.Log(other);
         other.GetComponentInParent<PlayerProperties>().stopRayCasting();
-
+        Destroy(gameObject);
 
     }
 }
