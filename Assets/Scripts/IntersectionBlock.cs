@@ -16,7 +16,7 @@ namespace Assets.Scripts
                 {
                     if (TrafficLight.CurrentLight == TrafficLight.Lights.Red)
                     {
-                        GameManager.Instance.GameOverMenu();
+                        GameManager.Instance.GameOverMenu(GameManager.Errors.RanRed);
                     }
                 }
             }
