@@ -5,7 +5,6 @@ namespace Assets.Scripts
     public class PedestrianCloseWalk : Assets.Scripts.PedestrianWalk {
 
         private bool can = true;
-        private ParticleSystem ps;
         public GameObject coll;
 
         // Use this for initialization

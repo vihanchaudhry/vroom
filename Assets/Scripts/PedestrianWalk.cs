@@ -6,9 +6,9 @@ namespace Assets.Scripts
 
         public GameObject destination;
         protected Vector3 startPos, destPos;
-        protected bool run = false;
+        protected bool run;
         protected float t;
-        protected bool fail = false;
+        protected bool fail;
         protected PlayerProperties pp;
         public ParticleSystem indicator;
         protected ParticleSystem ps;
@@ -18,6 +18,8 @@ namespace Assets.Scripts
             startPos = transform.position;
             destPos = destination.transform.position;
             t = 0;
+            run = false;
+            fail = false;
         }
 	
         // Update is called once per frame
