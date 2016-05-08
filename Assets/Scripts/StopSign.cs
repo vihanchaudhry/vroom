@@ -1,66 +1,68 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class StopSign : MonoBehaviour
+namespace Assets.Scripts
 {
-
-    private bool enabled = true;
-    private bool part2 = false;
-    public ParticleSystem left, right;
-    private ParticleSystem leftPS, rightPS;
-    private Vector3 offset1, offset2;
-    // Use this for initialization
-    void Start()
-    {
-        offset2 = new Vector3(25, 10, -60);
-        offset1 = new Vector3(25, 10, 40);
-    }
-
-    // Update is called once per frame
-    void Update()
+    public class StopSign : MonoBehaviour
     {
 
-        if (part2)
+        private bool enabled = true;
+        private bool part2 = false;
+        public ParticleSystem left, right;
+        private ParticleSystem leftPS, rightPS;
+        private Vector3 offset1, offset2;
+        // Use this for initialization
+        void Start()
         {
-            if (leftPS.startSpeed >= 1 && rightPS.startSpeed >= 1)
+            offset2 = new Vector3(25, 10, -60);
+            offset1 = new Vector3(25, 10, 40);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+            if (part2)
             {
-                Destroy(leftPS);
-                Destroy(rightPS);
-                enabled = false;
-                part2 = false;
+                if (leftPS.startSpeed >= 1 && rightPS.startSpeed >= 1)
+                {
+                    Destroy(leftPS);
+                    Destroy(rightPS);
+                    enabled = false;
+                    part2 = false;
+                }
             }
         }
-    }
 
-    void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        void OnTriggerStay(Collider other)
         {
-            if (other.GetComponent<Rigidbody>().velocity == Vector3.zero && !part2 && enabled)
+            if (other.CompareTag("Player"))
             {
-                part2 = true;
-                leftPS = Instantiate(left, transform.position + offset1, left.transform.rotation) as ParticleSystem;
-                rightPS = Instantiate(right, transform.position + offset2, right.transform.rotation) as ParticleSystem;
-                other.GetComponent<PlayerProperties>().startRayCasting();
+                if (other.GetComponent<Rigidbody>().velocity == Vector3.zero && !part2 && enabled)
+                {
+                    part2 = true;
+                    leftPS = Instantiate(left, transform.position + offset1, left.transform.rotation) as ParticleSystem;
+                    rightPS = Instantiate(right, transform.position + offset2, right.transform.rotation) as ParticleSystem;
+                    other.GetComponent<PlayerProperties>().startRayCasting();
+                }
             }
         }
-    }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (enabled)
+        void OnTriggerExit(Collider other)
         {
-            if(!part2)
-                GameManager.Instance.addDemerit(1);
+            if (enabled)
+            {
+                if(!part2)
+                    GameManager.Instance.AddDemerit(1);
 
-            GameManager.Instance.addDemerit(1);
-        }
-        else
-        {
-            enabled = true;
-        }
-        other.GetComponentInParent<PlayerProperties>().stopRayCasting();
-        Destroy(gameObject);
+                GameManager.Instance.AddDemerit(1);
+            }
+            else
+            {
+                enabled = true;
+            }
+            other.GetComponentInParent<PlayerProperties>().stopRayCasting();
+            Destroy(gameObject);
 
+        }
     }
 }

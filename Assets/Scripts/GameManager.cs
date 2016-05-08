@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using Assets.Scripts.car;
+﻿using Assets.Scripts.car;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         HitCurb,
         HitPedestrian,
         MaxDemerits,
-		TooFast
+        TooFast
     };
 
     public Errors currentError;
@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<CarController>();
     }
 
+
     public void Update()
     {
         if (isGameOver)
@@ -82,7 +83,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void addDemerit(int amount)
+    public void AddDemerit(int amount)
     {
         currentDemerits += amount;
         AudioSource.PlayClipAtPoint(wrongSound, player.transform.position);
@@ -97,7 +98,7 @@ public class GameManager : MonoBehaviour
         GUI.enabled = true;
         isGameOver = true;
         AudioSource.PlayClipAtPoint(crashSound, player.transform.position);
-         
+
         foreach (Transform t in gameoverGUI.transform)
         {
             t.gameObject.SetActive(true);
@@ -105,19 +106,34 @@ public class GameManager : MonoBehaviour
 
         Text errorMessage = GameObject.FindGameObjectWithTag("ErrorMessage").GetComponent<Text>();
 
-		if (error == Errors.HitCurb) {
-			errorMessage.text = "You hit the curb! Looks like you need to take another trip to the DMV. Press X to restart";
-		} else if (error == Errors.HitPedestrian) {
-			errorMessage.text = "You have to stop when the pedestrians crossing! He is going to sue you for all you're worth. Press X to restart";
-		} else if (error == Errors.RanRed) {
-			errorMessage.text = "You ran a red light! This is illegal, you know. Press X to restart";
-		} else if (error == Errors.TooFast) {
-			errorMessage.text = "You were too fast and three furious. Press X to restart";
-		}
+        if (error == Errors.HitCurb)
+        {
+            errorMessage.text =
+                "You hit the curb! Looks like you need to take another trip to the DMV. Press X to restart.";
+        }
+        else if (error == Errors.HitPedestrian)
+        {
+            errorMessage.text =
+                "You have to stop when the pedestrian is crossing! He is going to sue you for all you're worth! Press X to restart.";
+        }
+        else if (error == Errors.RanRed)
+        {
+            errorMessage.text = "You ran a red light! This is illegal, you know... Press X to restart.";
+        }
+        else if (error == Errors.TooFast)
+        {
+            errorMessage.text = "You were too fast and three furious. Press X to restart.";
+        }
         else
         {
-            errorMessage.text = "You got over 15 demerits! Looks like you need to take another trip to the DMV. Press X to restart";
+            errorMessage.text =
+                "You got over 15 demerits! Looks like you need to take another trip to the DMV. Press X to restart.";
         }
+    }
+
+    public void PlayCorrectSound()
+    {
+        AudioSource.PlayClipAtPoint(correctSound, player.transform.position);
     }
 
     public void WinnerMenu()
@@ -134,16 +150,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PlayCorrectSound()
-    {
-        AudioSource.PlayClipAtPoint(correctSound, player.transform.position);
-    }
 
     public void ClickSeatBelt()
     {
         AudioSource.PlayClipAtPoint(seatbeltSound, player.transform.position);
     }
-
 
     public void RestartGame()
     {
@@ -157,5 +168,8 @@ public class GameManager : MonoBehaviour
         currentDemerits = 0;
         isGameOver = false;
         player = FindObjectOfType<CarController>();
+
     }
+
 }
+

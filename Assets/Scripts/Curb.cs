@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class Curb : MonoBehaviour {
+namespace Assets.Scripts
+{
+    public class Curb : MonoBehaviour {
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        void OnCollisionEnter(Collision other)
         {
-            GameManager.Instance.GameOverMenu(GameManager.Errors.HitCurb);
+            if (other.gameObject.CompareTag("Player"))
+            {
+                GameManager.Instance.GameOverMenu(GameManager.Errors.HitCurb);
+            }
         }
     }
 }

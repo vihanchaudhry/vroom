@@ -434,7 +434,7 @@ GameObject:
   - 4: {fileID: 49653775}
   m_Layer: 0
   m_Name: WinnerContainer
-  m_TagString: Gameover
+  m_TagString: Winner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2349,7 +2349,7 @@ GameObject:
   - 4: {fileID: 658527308}
   m_Layer: 0
   m_Name: Winner
-  m_TagString: Gameover
+  m_TagString: Winner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2431,6 +2431,10 @@ Prefab:
     - target: {fileID: 443270, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 185852, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
+      propertyPath: m_Name
+      value: Pedestrian
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4dd332e0db075d4d8f514baa1f0499e, type: 2}
@@ -4447,6 +4451,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 100926, guid: acb3cdfe210a82d4985ff563ef985db9, type: 2}
+      propertyPath: m_Name
+      value: PedestrianClose
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acb3cdfe210a82d4985ff563ef985db9, type: 2}
   m_IsPrefabParent: 0
@@ -4737,7 +4745,7 @@ GameObject:
   - 222: {fileID: 1647169945}
   - 114: {fileID: 1647169944}
   m_Layer: 5
-  m_Name: CriticalError
+  m_Name: WinnerMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5265,7 +5273,7 @@ GameObject:
   - 114: {fileID: 1771376275}
   m_Layer: 5
   m_Name: Text (1)
-  m_TagString: ErrorMessage
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5321,7 +5329,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Looks like you need to take another trip to the DMV.
+  m_Text: Congratulations on getting your drivers license! Press X to play again.
 --- !u!222 &1771376276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5455,7 +5463,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Try Again
+  m_Text: Play Again
 --- !u!222 &1852144044
 CanvasRenderer:
   m_ObjectHideFlags: 0
