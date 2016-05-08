@@ -55,6 +55,7 @@ public class IntersectionReset : MonoBehaviour {
         if(f == 1 || f == -3) {
             if (blinker != 2)
             {
+                Debug.Log("4");
                 GameManager.Instance.AddDemerit(1);
             }
         }
@@ -62,6 +63,7 @@ public class IntersectionReset : MonoBehaviour {
         {
             if(blinker != 1)
             {
+                Debug.Log("5");
                 GameManager.Instance.AddDemerit(1);
             }
         }

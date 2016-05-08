@@ -45,6 +45,7 @@ namespace Assets.Scripts
                     if (pp.GetComponent<Rigidbody>().velocity != Vector3.zero && !fail)
                     {
                         fail = true;
+                        Debug.Log("6");
                         GameManager.Instance.AddDemerit(1);
                     }
                 }

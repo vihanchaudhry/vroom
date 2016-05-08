@@ -17,6 +17,7 @@ public class PedestrianCheck : MonoBehaviour {
     {
         if(other.CompareTag("Player"))
         {
+            Debug.Log("3");
             GameManager.Instance.AddDemerit(1);
             Destroy(gameObject);
         }

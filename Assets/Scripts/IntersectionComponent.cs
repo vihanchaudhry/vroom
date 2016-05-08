@@ -23,6 +23,8 @@ public class IntersectionComponent : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Hey");
+            other.GetComponent<PlayerProperties>().setImmunity(true);
             if (dad.set(side) == 2)
             {
                 dad.calculate(other.GetComponent<PlayerProperties>());
