@@ -37,7 +37,6 @@ namespace Assets.Scripts
                 {
                     if(pp.GetComponent<Rigidbody>().velocity != Vector3.zero)
                     {
-                        //fail
                         GameManager.Instance.GameOverMenu(GameManager.Errors.HitPedestrian);
                     }
                 }
@@ -46,7 +45,6 @@ namespace Assets.Scripts
                     if (pp.GetComponent<Rigidbody>().velocity != Vector3.zero && !fail)
                     {
                         fail = true;
-                        //demerit
                         GameManager.Instance.AddDemerit(1);
                     }
                 }

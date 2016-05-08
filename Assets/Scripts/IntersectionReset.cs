@@ -55,14 +55,14 @@ public class IntersectionReset : MonoBehaviour {
         if(f == 1 || f == -3) {
             if (blinker != 2)
             {
-                //fail
+                GameManager.Instance.AddDemerit(1);
             }
         }
         else if(f == -1 || f == 3)
         {
             if(blinker != 1)
             {
-                //fail
+                GameManager.Instance.AddDemerit(1);
             }
         }
     }
