@@ -20,10 +20,11 @@ public class IntersectionComponent : MonoBehaviour {
     {
         if(other.CompareTag("Player"))
         {
-            if(dad.set(side) == 2)
+            if (dad.set(side) == 2)
             {
                 dad.calculate(other.GetComponent<PlayerProperties>());
             }
+            else (dad.setBlinker(other.GetComponent<PlayerProperties>().getBlinker());
         }
     }
 }
