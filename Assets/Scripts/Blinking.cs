@@ -27,13 +27,13 @@ public class Blinking : MonoBehaviour {
                 sp.enabled = !sp.enabled;
             }
 
-            if (runTimer < 0)
-            {
-                run = false;
-                runTimer = runTime;
-                timer = 0;
-                sp.enabled = false;
-            }
+//            if (runTimer < 0)
+//            {
+//                run = false;
+//                runTimer = runTime;
+//                timer = 0;
+//                sp.enabled = false;
+//            }
         }
 	}
 
