@@ -4,13 +4,13 @@ using System.Collections;
 public class PedestrianWalk : MonoBehaviour {
 
     public GameObject destination;
-    private Vector3 startPos, destPos;
-    private bool run = false;
-    private float t;
-    private bool fail = false;
-    private PlayerProperties pp;
+    protected Vector3 startPos, destPos;
+    protected bool run = false;
+    protected float t;
+    protected bool fail = false;
+    protected PlayerProperties pp;
     public ParticleSystem indicator;
-    private ParticleSystem ps;
+    protected ParticleSystem ps;
 
 	// Use this for initialization
 	void Start () {
