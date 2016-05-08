@@ -711,17 +711,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11436268, guid: fc212c3e6212df64293fd74e3886a694, type: 2}
-      propertyPath: m_Text
-      value: 'Critical Error! '
-      objectReference: {fileID: 0}
-    - target: {fileID: 11443588, guid: fc212c3e6212df64293fd74e3886a694, type: 2}
-      propertyPath: m_Text
-      value: Looks like you need to take another trip to the DMV.
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc212c3e6212df64293fd74e3886a694, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &158642591 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 123366, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+  m_PrefabInternal: {fileID: 1023965567}
 --- !u!1 &169693952 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 150604, guid: bfdc52d7494708e40850cec7906194c7, type: 2}
@@ -1195,6 +1191,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 32
       objectReference: {fileID: 0}
+    - target: {fileID: 497138, guid: bfdc52d7494708e40850cec7906194c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469998, guid: bfdc52d7494708e40850cec7906194c7, type: 2}
+      propertyPath: TrafficLight
+      value: 
+      objectReference: {fileID: 1461007556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bfdc52d7494708e40850cec7906194c7, type: 2}
   m_IsPrefabParent: 0
@@ -3104,6 +3108,92 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 4445cc61331571a4d8a0b6aec33e58be, type: 2}
   m_PrefabInternal: {fileID: 1010998495}
+--- !u!1001 &1023965567
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 86170760}
+    m_Modifications:
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -11.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.49999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.5000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.5000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 109430, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_Name
+      value: Traffic Lights (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429984, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: CurrentLight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429984, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: RedLight
+      value: 
+      objectReference: {fileID: 1912307865}
+    - target: {fileID: 11429984, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: YellowLight
+      value: 
+      objectReference: {fileID: 158642591}
+    - target: {fileID: 11429984, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: GreenLight
+      value: 
+      objectReference: {fileID: 1237598345}
+    - target: {fileID: 11429984, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: GreenTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429984, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: RedTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11429984, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: YellowTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.12625
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.12499997
+      objectReference: {fileID: 0}
+    - target: {fileID: 410962, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.12499997
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1043543432 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 112148, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
@@ -3748,6 +3838,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &1237598345 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 112148, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+  m_PrefabInternal: {fileID: 1023965567}
 --- !u!1001 &1250096591
 Prefab:
   m_ObjectHideFlags: 0
@@ -4180,6 +4274,12 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 422718, guid: bfdc52d7494708e40850cec7906194c7, type: 2}
   m_PrefabInternal: {fileID: 629276014}
+--- !u!114 &1461007556 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11429984, guid: 9ca2774deb137484faf4d0aa9b382504,
+    type: 2}
+  m_PrefabInternal: {fileID: 1023965567}
+  m_Script: {fileID: 11500000, guid: 85cbf94368c169c4ea907e9058748694, type: 3}
 --- !u!4 &1461769984 stripped
 Transform:
   m_PrefabParentObject: {fileID: 450592, guid: 5213b3f6719993242858ae2b0a925bb2, type: 2}
@@ -5011,6 +5111,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2006544310}
   m_RootOrder: 1
+--- !u!1 &1912307865 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 175880, guid: 9ca2774deb137484faf4d0aa9b382504, type: 2}
+  m_PrefabInternal: {fileID: 1023965567}
 --- !u!4 &1913471740 stripped
 Transform:
   m_PrefabParentObject: {fileID: 422718, guid: bfdc52d7494708e40850cec7906194c7, type: 2}
